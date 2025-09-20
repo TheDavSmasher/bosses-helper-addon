@@ -28,4 +28,9 @@ components.EntityFlagger = {}
 ---@overload fun(entity: Entity, startChained: boolean, removeTogether?: boolean): EntityChain
 components.EntityChain = {}
 
+---@class LuaCoroutineComponent : Component
+---@overload fun(func: function): LuaCoroutineComponent
+---@overload fun(coroutine: LuaCoroutine): LuaCoroutineComponent
+components.LuaCoroutineComponent = {}
+
 return components
