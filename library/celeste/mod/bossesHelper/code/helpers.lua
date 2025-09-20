@@ -27,6 +27,7 @@ function helpers.BossesHelperUtils.PositionTween(tself, target, time, easer) end
 
 --#region LuaBossHelper
 ---@class LuaBossHelper
+---@field HelperFunctions string
 helpers.LuaBossHelper = {}
 
 ---Get the string contents of the file.

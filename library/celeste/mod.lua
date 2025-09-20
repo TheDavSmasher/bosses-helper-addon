@@ -22,8 +22,10 @@ function mod.Logger.Error(tag, message) end
 function mod.Logger.Info(tag, message) end
 --#endregion
 
+---@alias ProxyResume fun(self: LuaCoroutineProxy, ...: any): boolean, string|LuaException|nil
+
 ---@class LuaCoroutineProxy
----@field resume fun(self: LuaCoroutineProxy, ...: any): boolean, string|LuaException|nil
+---@field resume ProxyResume
 ---@field value thread
 
 ---@class LuaCoroutine
