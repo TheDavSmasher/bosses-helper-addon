@@ -28,7 +28,7 @@ function mod.Logger.Info(tag, message) end
 ---@field resume ProxyResume
 ---@field value thread
 
----@class LuaCoroutine
+---@class LuaCoroutine : IEnumerator
 ---@overload fun(proxy: LuaCoroutineProxy): LuaCoroutine
 mod.LuaCoroutine = {}
 
