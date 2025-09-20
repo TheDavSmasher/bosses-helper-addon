@@ -120,4 +120,8 @@ function lua.LuaMethodWrappers.EntityHasComponent(entity, name, prefix) end
 
 --#endregion
 
+---@class LuaFuncCoroutine : LuaCoroutine
+---@overload fun(proxy: LuaCoroutineProxy): LuaFuncCoroutine
+lua.LuaFuncCoroutine = {}
+
 return lua
