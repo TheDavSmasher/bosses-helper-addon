@@ -1,6 +1,6 @@
 ---@meta Celeste.Mod
 
----@class Celeste.Mod
+---@class Mod
 local mod = {}
 
 ---@class EverestModuleMetadata
