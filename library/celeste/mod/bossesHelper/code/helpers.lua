@@ -3,6 +3,10 @@
 ---@class Helpers
 local helpers = {}
 
+---@class LuaException
+---@overload fun(message: string): LuaException
+helpers.LuaException = {}
+
 --#region BossesHelperUtils
 ---@class BossesHelperUtils
 helpers.BossesHelperUtils = {}

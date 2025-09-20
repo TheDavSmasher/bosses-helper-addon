@@ -22,6 +22,14 @@ function mod.Logger.Error(tag, message) end
 function mod.Logger.Info(tag, message) end
 --#endregion
 
+---@class LuaCoroutineProxy
+---@field resume fun(self: LuaCoroutineProxy, ...: any): boolean, string|LuaException|nil
+---@field value thread
+
+---@class LuaCoroutine
+---@overload fun(proxy: LuaCoroutineProxy): LuaCoroutine
+mod.LuaCoroutine = {}
+
 ---@module "Celeste.Mod.BossesHelper"
 mod.BossesHelper = {}
 
