@@ -1,7 +1,7 @@
 ---@meta LuaMeta
 
 ---@class _G
----@field luanet any Luanet server
+---@field luanet table Luanet server
 
 ---@class BossPuppet
 puppet = {}

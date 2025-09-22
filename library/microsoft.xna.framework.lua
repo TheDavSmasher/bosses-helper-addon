@@ -23,3 +23,5 @@ framework.Vector2 = {}
 ---@return number length The Vector2's length
 function framework.Vector2:Length() end
 --#endregion
+
+return framework
