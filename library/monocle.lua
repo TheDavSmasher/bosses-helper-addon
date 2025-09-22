@@ -89,3 +89,5 @@ function monocle.Scene:Remove(entity) end
 ---@field State integer
 ---@field Locked boolean
 monocle.StateMachine = {}
+
+return monocle
