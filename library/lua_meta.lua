@@ -19,9 +19,21 @@ bossID = ""
 
 ---@type BossPuppet
 puppet = {}
+
+---@type BadelineSidekick
+sidekick = {}
+
+--#region Events
+---@type CutsceneEntity
+cutsceneEntity = {}
+--#endregion
+
 --#endregion
 
 --#region Save Point
+---@type GlobalSavePoint
+savePoint = {}
+
 ---@type Vector2
 spawnPoint = {}
 --#endregion
