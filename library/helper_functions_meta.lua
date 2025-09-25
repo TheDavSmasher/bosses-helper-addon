@@ -63,7 +63,7 @@ function helpers.getEnum(enum, value) end
 
 --- Pause code exection for duration seconds.
 ---@param duration number|IEnumerator? Duration to wait (in seconds).
----@return number|IEnumerator?
+---@return IEnumerator
 function helpers.wait(duration) end
 
 --- Gets the current room the player is in.
@@ -78,6 +78,7 @@ function helpers.getSession() end
 
 --- Display textbox with dialog.
 ---@param dialog string Dialog ID used for the conversation.
+---@return number|IEnumerator?
 function helpers.say(dialog) end
 
 --- Display minitextbox with dialog.
@@ -115,6 +116,7 @@ function helpers.postcard(dialog, sfxIn, sfxOut) end
 ---@default 1.0
 ---@param keepWalkingIntoWalls boolean? If the player should keep walking into walls.
 ---@default false
+---@return IEnumerator
 function helpers.walkTo(x, walkBackwards, speedMultiplier, keepWalkingIntoWalls) end
 
 --- Player walks x pixels from current position.
@@ -125,16 +127,19 @@ function helpers.walkTo(x, walkBackwards, speedMultiplier, keepWalkingIntoWalls)
 ---@default 1.0
 ---@param keepWalkingIntoWalls boolean? If the player should keep walking into walls.
 ---@default false
+---@return IEnumerator
 function helpers.walk(x, walkBackwards, speedMultiplier, keepWalkingIntoWalls) end
 
 --- Player runs to the given X coordinate. This is in pixels and uses map based coordinates.
 ---@param x number X coordinate to run to.
 ---@param fastAnimation boolean Whether this should use the fast animation or not.
+---@return IEnumerator
 function helpers.runTo(x, fastAnimation) end
 
 --- Player runs x pixels from current position.
 ---@param x number X offset for where player should run.
 ---@param fastAnimation boolean Whether this should use the fast animation or not.
+---@return IEnumerator
 function helpers.run(x, fastAnimation) end
 
 --- Kills the player.
@@ -437,6 +442,7 @@ function helpers.playPuppetAnim(anim) end
 
 ---Play an animation on the Boss's given sprite and wait for it to complete one full cycle.
 ---@param anim string The animation to play
+---@return IEnumerator
 function helpers.playAndWaitPuppetAnim(anim) end
 
 ---Get a random number based on the boss's random seed.
@@ -853,6 +859,7 @@ function helpers.giveInvincibleFrames(time) end
 ---Display textbox with dialog. Any provided functions will be passed as Triggers accessible to Dialog.txt triggers.
 ---@param dialog string Dialog ID used for the conversation.
 ---@param ... function Functions that will be called whenever a trigger is activated through dialogue.
+---@return IEnumerator
 function helpers.sayExt(dialog, ...) end
 
 ---Creates a new SoundSource and adds it to the provided entity, starting the sound immediately
