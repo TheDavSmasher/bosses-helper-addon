@@ -78,7 +78,7 @@ function helpers.getSession() end
 
 --- Display textbox with dialog.
 ---@param dialog string Dialog ID used for the conversation.
----@return number|IEnumerator?
+---@return IEnumerator
 function helpers.say(dialog) end
 
 --- Display minitextbox with dialog.
