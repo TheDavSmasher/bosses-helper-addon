@@ -53,4 +53,19 @@ function system.Collections.Generic.HashSet:Remove(value) end
 
 --#endregion
 
+--#region Type
+---@class Type
+system.Type = {}
+--#endregion
+
+--#region Object
+---@class Object
+system.Object = {}
+
+---@return Type
+function system.Object:GetType() end
+
+---@alias csobject Object
+--#endregion
+
 return system
