@@ -6,19 +6,19 @@
 helpers = {}
 
 ---@module "Monocle"
-local monocle
+local _monocle
 
 ---@module "Celeste"
-local celeste
+local _celeste
 
 ---@module "Microsoft.XNA.Framework"
-local framework
+local _framework
 
-helpers.monocle = monocle
+helpers.monocle = _monocle
 
-helpers.engine = monocle.Engine
+helpers.engine = _monocle.Engine
 
-helpers.celeste = celeste
+helpers.celeste = _celeste
 
 ---Returns a new Vector2
 ---@param x number
