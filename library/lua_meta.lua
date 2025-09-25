@@ -1,16 +1,27 @@
 ---@meta LuaMeta
 
----@class EverestModuleMetadata
+---@diagnostic disable: missing-fields
+
+--#region All Globals
+---@type EverestModuleMetadata
 modMetaData = {}
 
----@class Player
+---@type Player
 player = {}
+--#endregion
 
----@class BossPuppet
-puppet = {}
-
----@class BossController
+--#region Boss Files
+---@type BossController
 boss = {}
 
 ---@type string
-bossId = ""
+bossID = ""
+
+---@type BossPuppet
+puppet = {}
+--#endregion
+
+--#region Save Point
+---@type Vector2
+spawnPoint = {}
+--#endregion
