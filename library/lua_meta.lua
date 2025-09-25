@@ -37,3 +37,8 @@ savePoint = {}
 ---@type Vector2
 spawnPoint = {}
 --#endregion
+
+--#region Health System
+---@type PlayerHealthBar
+healthBar = {}
+--#endregion
