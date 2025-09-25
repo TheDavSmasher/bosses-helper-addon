@@ -53,6 +53,19 @@ celeste.BadelineOldsite = {}
 ---@field Strength number
 celeste.BloomRenderer = {}
 
+--#region CutsceneEntity
+---@class CutsceneEntity : Entity
+celeste.CutsceneEntity = {}
+
+---comment
+---@param target Vector2
+---@param duration number
+---@param ease? Ease.Easer
+---@param delay? number
+---@return IEnumerator
+function celeste.CutsceneEntity.CameraTo(target, duration, ease, delay) end
+--#endregion
+
 --#region Dialog
 ---@class Dialog
 celeste.Dialog = {}
@@ -127,6 +140,22 @@ function celeste.Level:NextColorGrade(next, time) end
 
 ---Cancel the current Cutscene.
 function celeste.Level:CancelCutscene() end
+
+---@param screenSpaceFocusPoint Vector2
+---@param zoom number
+---@param duration number
+---@return IEnumerator
+function celeste.Level:ZoomTo(screenSpaceFocusPoint, zoom, duration) end
+
+---@param screenSpaceFocusPoint Vector2
+---@param zoom number
+---@param duration number
+---@return IEnumerator
+function celeste.Level:ZoomAcross(screenSpaceFocusPoint, zoom, duration) end
+
+---@param duration number
+---@return IEnumerator
+function celeste.Level:ZoomBack(duration) end
 --#endregion
 
 ---@class LevelData
@@ -155,6 +184,7 @@ celeste.MiniTextbox = {}
 ---@class Player : Actor
 ---@field IntroType IntroTypes
 ---@field StateMachine StateMachine
+---@field ForceCameraUpdate boolean
 ---@field Dead boolean
 ---@field DummyFriction boolean
 ---@field DummyAutoAnimate boolean

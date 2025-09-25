@@ -31,6 +31,10 @@ monocle.ColliderList = {}
 ---@class Component
 monocle.Component = {}
 
+---@class Coroutine : Component
+---@overload fun(logic: IEnumerator): Coroutine
+monocle.Coroutine = {}
+
 --#region Ease
 ---@class Ease : { [string]: Ease.Easer }
 monocle.Ease = {}
@@ -58,6 +62,8 @@ monocle.Entity = {}
 ---Add a Component to the Entity.
 ---@param component Component The Component to add.
 function monocle.Entity:Add(component) end
+
+monocle.Entity.add = monocle.Entity.Add
 --#endregion
 
 ---@class Hitbox
@@ -84,6 +90,9 @@ function monocle.Scene:Add(entity) end
 ---Remove an [Entity](lua://Entity) from the [Scene](lua://Scene).
 ---@param entity Entity The [Entity](lua://Entity) to remove.
 function monocle.Scene:Remove(entity) end
+
+monocle.Scene.add = monocle.Scene.Add
+monocle.Scene.remove = monocle.Scene.Remove
 --#endregion
 
 ---@class StateMachine

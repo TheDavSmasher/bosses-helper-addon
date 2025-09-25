@@ -141,4 +141,10 @@ function entities.BossController:DeleteStoredObject(key) end
 function entities.BossController:DecreaseHealth(amount) end
 --#endregion
 
+---@class GlobalSavePoint : Entity
+entities.GlobalSavePoint = {}
+
+---@class BadelineSidekick : Entity
+entities.BadelineSidekick = {}
+
 return entities
