@@ -1,7 +1,10 @@
 ---@meta LuaMeta
 
----@class _G
----@field luanet table Luanet server
+---@class EverestModuleMetadata
+modMetaData = {}
+
+---@class Player
+player = {}
 
 ---@class BossPuppet
 puppet = {}
@@ -9,11 +12,5 @@ puppet = {}
 ---@class BossController
 boss = {}
 
----@class EverestModuleMetadata
-modMetaData = {}
-
 ---@type string
 bossId = ""
-
----@class Player
-player = {}

@@ -1,5 +1,8 @@
 ---@meta CutsceneHelper
 
+---@class _G
+---@field luanet table Luanet server
+
 ---@class InjectedData : table
 ---@field modMetaData EverestModuleMetadata
 
