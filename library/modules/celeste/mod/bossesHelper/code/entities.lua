@@ -147,4 +147,23 @@ entities.GlobalSavePoint = {}
 ---@class BadelineSidekick : Entity
 entities.BadelineSidekick = {}
 
+--#region Health Displays
+---@class HealthDisplays
+entities.HealthDisplays = {}
+
+---@class HealthDisplay : Entity
+entities.HealthDisplays.HealthDisplay = {}
+
+---@class HealthIconList : HealthDisplay
+entities.HealthDisplays.HealthIconList = {}
+--#endregion
+
+--#region HealthSystemManager
+---@class HealthSystemManager : Entity
+entities.HealthSystemManager = {}
+
+---@class PlayerHealthBar : HealthIconList
+entities.HealthSystemManager.PlayerHealthBar = {}
+--#endregion
+
 return entities
