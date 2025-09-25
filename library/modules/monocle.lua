@@ -52,6 +52,7 @@ monocle.Engine = {}
 ---@field Position Vector2
 ---@field Center Vector2
 ---@field Collidable boolean
+---@overload fun(): Entity
 monocle.Entity = {}
 
 ---Add a Component to the Entity.
