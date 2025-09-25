@@ -56,8 +56,11 @@ monocle.Engine = {}
 ---@field Position Vector2
 ---@field Center Vector2
 ---@field Collidable boolean
+---@field Depth integer
 ---@overload fun(): Entity
 monocle.Entity = {}
+
+function monocle.Entity:RemoveSelf() end
 
 ---Add a Component to the Entity.
 ---@param component Component The Component to add.
@@ -72,6 +75,7 @@ monocle.Hitbox = {}
 
 --#region Sprite
 ---@class Sprite
+---@field Scale Vector2
 monocle.Sprite = {}
 
 ---Play an animation.

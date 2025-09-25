@@ -184,6 +184,7 @@ function helpers.getRoomPosition(name) end
 ---@param y number Target y coordinate.
 ---@param room string? What room the game should attempt to load. If room is specified player will land at closest spawnpoint to target location.
 ---@param introType string|IntroTypes intro type to use, can be either a #IntroTypes enum or a string
+---@overload fun(pos: Vector2, room?: string, introType?: string|IntroTypes)
 function helpers.teleportTo(x, y, room, introType) end
 
 --- Teleport the player to (x, y) pixels from current position.
@@ -276,7 +277,7 @@ function helpers.getMusicProgression() end
 
 --- Set music layer on/off.
 ---@param layer number[]|number number or table of numbers to set.
----@param value boolean The state of the layer.
+---@param value number|boolean The state of the layer.
 function helpers.setMusicLayer(layer, value) end
 
 --- Attempt to set the player spawnpoint.

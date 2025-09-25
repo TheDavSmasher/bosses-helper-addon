@@ -45,6 +45,28 @@ celeste.AudioTrackState = {}
 function celeste.AudioTrackState:Layer(layer, value) end
 --#endregion
 
+--#region BadelineDummy
+---@class BadelineDummy : Entity
+---@field Sprite Sprite
+---@field Floatness number
+---@overload fun(pos: Vector2): BadelineDummy
+celeste.BadelineDummy = {}
+
+---@param level Level
+---@param silent? boolean
+function celeste.BadelineDummy:Appear(level, silent) end
+
+function celeste.BadelineDummy:Vanish() end
+
+---@param target Vector2
+---@param turnAtEndTo? integer
+---@param faceDir? boolean
+---@param fadeLight? boolean
+---@param quickEnd? boolean
+---@return IEnumerator
+function celeste.BadelineDummy:FloatTo(target, turnAtEndTo, faceDir, fadeLight, quickEnd) end
+--#endregion
+
 ---@class BadelineOldsite : Entity
 ---@overload fun(position: Vector2, index: integer): BadelineOldsite
 celeste.BadelineOldsite = {}
@@ -64,6 +86,10 @@ celeste.CutsceneEntity = {}
 ---@param delay? number
 ---@return IEnumerator
 function celeste.CutsceneEntity.CameraTo(target, duration, ease, delay) end
+
+---@param level Level
+---@param removeSelf? boolean
+function celeste.CutsceneEntity:EndCutscene(level, removeSelf) end
 --#endregion
 
 --#region Dialog
@@ -74,6 +100,24 @@ celeste.Dialog = {}
 ---@param name string The name of the dialog to get.
 ---@return string
 function celeste.Dialog.Get(name) end
+--#endregion
+
+--#region DisplacementRenderer
+---@class DisplacementRenderer
+celeste.DisplacementRenderer = {}
+
+---@class Burst
+celeste.DisplacementRenderer.Burst = {}
+
+---@param position Vector2
+---@param duration number
+---@param radiusFrom number
+---@param radiusTo number
+---@param alpha? number
+---@param alphaEaser? Ease.Easer
+---@param radiusEaser? Ease.Easer
+---@return Burst
+function celeste.DisplacementRenderer:AddBurst(position, duration, radiusFrom, radiusTo, alpha, alphaEaser, radiusEaser) end
 --#endregion
 
 ---@class EntityData
@@ -89,6 +133,13 @@ celeste.EntityData = {}
 ---@overload fun(level: string, id: integer): EntityID
 celeste.EntityID = {}
 
+---@enum Facings
+celeste.Facings = {}
+
+---@class InvisibleBarrier : Entity
+---@overload fun(pos: Vector2, width: number, height: number): InvisibleBarrier
+celeste.InvisibleBarrier = {}
+
 ---@class Key : Entity
 ---@field ID EntityID
 ---@overload fun(player: Player, id: EntityID): Key
@@ -98,6 +149,7 @@ celeste.Key = {}
 ---@class Level : Scene
 ---@field Session Session
 ---@field Bounds Rectangle
+---@field Displacement DisplacementRenderer
 ---@field CameraOffset Vector2
 ---@field LevelOffset Vector2
 ---@field Bloom BloomRenderer
@@ -156,6 +208,8 @@ function celeste.Level:ZoomAcross(screenSpaceFocusPoint, zoom, duration) end
 ---@param duration number
 ---@return IEnumerator
 function celeste.Level:ZoomBack(duration) end
+
+function celeste.Level:ResetZoom() end
 --#endregion
 
 ---@class LevelData
@@ -183,6 +237,7 @@ celeste.MiniTextbox = {}
 --#region Player
 ---@class Player : Actor
 ---@field IntroType IntroTypes
+---@field Facing Facings
 ---@field StateMachine StateMachine
 ---@field ForceCameraUpdate boolean
 ---@field Dead boolean
@@ -232,6 +287,8 @@ function celeste.Player:StartStarFly() end
 ---@param target Vector2 The target end position.
 ---@param control Vector2 The flying arc middle point.
 function celeste.Player:StartCassetteFly(target, control) end
+
+function celeste.Player:CreateSplitParticles() end
 
 ---@enum IntroTypes
 celeste.Player.IntroTypes = {}
