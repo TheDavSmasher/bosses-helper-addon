@@ -5,7 +5,7 @@ local luaCutscenes = {}
 
 --#region ChoicePrompt
 ---@class ChoicePrompt : Entity
----@field Choice integer
+---@field Choice int
 luaCutscenes.ChoicePrompt = {}
 
 ---Create a prompt dialog with multiple choice IDs.

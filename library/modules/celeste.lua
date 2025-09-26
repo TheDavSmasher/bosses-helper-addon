@@ -36,19 +36,19 @@ function celeste.AudioState:Apply(forceSixteenthNoteHack) end
 --#region AudioTrackState
 ---@class AudioTrackState
 ---@field Event string
----@field Progress integer
+---@field Progress int
 celeste.AudioTrackState = {}
 
 ---Update the given audio layer.
----@param layer integer The layer to update.
----@param value boolean|number The value to give the layer.
+---@param layer int The layer to update.
+---@param value boolean|float The value to give the layer.
 function celeste.AudioTrackState:Layer(layer, value) end
 --#endregion
 
 --#region BadelineDummy
 ---@class BadelineDummy : Entity
 ---@field Sprite Sprite
----@field Floatness number
+---@field Floatness float
 ---@overload fun(pos: Vector2): BadelineDummy
 celeste.BadelineDummy = {}
 
@@ -59,7 +59,7 @@ function celeste.BadelineDummy:Appear(level, silent) end
 function celeste.BadelineDummy:Vanish() end
 
 ---@param target Vector2
----@param turnAtEndTo? integer
+---@param turnAtEndTo? int
 ---@param faceDir? boolean
 ---@param fadeLight? boolean
 ---@param quickEnd? boolean
@@ -68,11 +68,11 @@ function celeste.BadelineDummy:FloatTo(target, turnAtEndTo, faceDir, fadeLight, 
 --#endregion
 
 ---@class BadelineOldsite : Entity
----@overload fun(position: Vector2, index: integer): BadelineOldsite
+---@overload fun(position: Vector2, index: int): BadelineOldsite
 celeste.BadelineOldsite = {}
 
 ---@class BloomRenderer
----@field Strength number
+---@field Strength float
 celeste.BloomRenderer = {}
 
 --#region CollisionData
@@ -91,9 +91,9 @@ celeste.CollisionData = {}
 celeste.CutsceneEntity = {}
 
 ---@param target Vector2
----@param duration number
+---@param duration float
 ---@param ease? Ease.Easer
----@param delay? number
+---@param delay? float
 ---@return IEnumerator
 function celeste.CutsceneEntity.CameraTo(target, duration, ease, delay) end
 
@@ -120,10 +120,10 @@ celeste.DisplacementRenderer = {}
 celeste.DisplacementRenderer.Burst = {}
 
 ---@param position Vector2
----@param duration number
----@param radiusFrom number
----@param radiusTo number
----@param alpha? number
+---@param duration float
+---@param radiusFrom float
+---@param radiusTo float
+---@param alpha? float
 ---@param alphaEaser? Ease.Easer
 ---@param radiusEaser? Ease.Easer
 ---@return Burst
@@ -131,23 +131,23 @@ function celeste.DisplacementRenderer:AddBurst(position, duration, radiusFrom, r
 --#endregion
 
 ---@class EntityData
----@field ID integer
+---@field ID int
 ---@field Level Level
 ---@field Position Vector2
----@field Width integer
----@field Height integer
+---@field Width int
+---@field Height int
 ---@field Values Dictionary<string, any>
 celeste.EntityData = {}
 
 ---@class EntityID
----@overload fun(level: string, id: integer): EntityID
+---@overload fun(level: string, id: int): EntityID
 celeste.EntityID = {}
 
 ---@enum Facings
 celeste.Facings = {}
 
 ---@class InvisibleBarrier : Solid
----@overload fun(pos: Vector2, width: number, height: number): InvisibleBarrier
+---@overload fun(pos: Vector2, width: float, height: float): InvisibleBarrier
 celeste.InvisibleBarrier = {}
 
 ---@class Key : Entity
@@ -183,12 +183,12 @@ function celeste.Level:GetSpawnPoint(at) end
 function celeste.Level:CompleteArea(spotlightWipe, skipScreenWipe, skipCompleteScreen) end
 
 ---Start a screen shake.
----@param time? number The duration of the shake.
+---@param time? float The duration of the shake.
 function celeste.Level:Shake(time) end
 
 ---Start a screen shake with a direction.
 ---@param dir Vector2
----@param time? number The duration of the shake.
+---@param time? float The duration of the shake.
 function celeste.Level:DirectionalShake(dir, time) end
 
 ---Instantly change to the next colorgrade.
@@ -197,25 +197,25 @@ function celeste.Level:SnapColorGrade(next) end
 
 ---Change to the other colorgrade over the timer.
 ---@param next string The next colorgrade
----@param time? number The time to make the change over.
+---@param time? float The time to make the change over.
 function celeste.Level:NextColorGrade(next, time) end
 
 ---Cancel the current Cutscene.
 function celeste.Level:CancelCutscene() end
 
 ---@param screenSpaceFocusPoint Vector2
----@param zoom number
----@param duration number
+---@param zoom float
+---@param duration float
 ---@return IEnumerator
 function celeste.Level:ZoomTo(screenSpaceFocusPoint, zoom, duration) end
 
 ---@param screenSpaceFocusPoint Vector2
----@param zoom number
----@param duration number
+---@param zoom float
+---@param duration float
 ---@return IEnumerator
 function celeste.Level:ZoomAcross(screenSpaceFocusPoint, zoom, duration) end
 
----@param duration number
+---@param duration float
 ---@return IEnumerator
 function celeste.Level:ZoomBack(duration) end
 
@@ -257,7 +257,7 @@ celeste.Platform = {}
 ---@field DummyFriction boolean
 ---@field DummyAutoAnimate boolean
 ---@field AutoJump boolean
----@field AutoJumpTimer number
+---@field AutoJumpTimer float
 ---@field Speed Vector2
 ---@field Sprite Sprite
 celeste.Player = {}
@@ -270,20 +270,20 @@ celeste.Player = {}
 function celeste.Player:Die(dir, evenIfInvincible, registerDeathInStats) end
 
 ---Check if the Player is touching ground.
----@param at? number Vertical offset to check at.
+---@param at? float Vertical offset to check at.
 ---@return boolean
 function celeste.Player:OnGround(at) end
 
 ---Make the player walk in Dummy state.
----@param x number The target x.
+---@param x float The target x.
 ---@param walkBackwards? boolean
----@param speedMultiplier? number
+---@param speedMultiplier? float
 ---@param keepWalkingIntoWalls? boolean
 ---@return IEnumerator
 function celeste.Player:DummyWalkTo(x, walkBackwards, speedMultiplier, keepWalkingIntoWalls) end
 
 ---Make the player run in Dummy state.
----@param x number The target x.
+---@param x float The target x.
 ---@param fastAnimation? boolean
 ---@return IEnumerator
 function celeste.Player:DummyRunTo(x, fastAnimation) end
@@ -313,7 +313,7 @@ celeste.PlayerInventory = {}
 --#region Postcard
 ---@class Postcard : Entity
 ---@overload fun(msg: string, sfxIn: string, sfxOut: string): Postcard
----@overload fun(msg: string, area: integer): Postcard
+---@overload fun(msg: string, area: int): Postcard
 celeste.Postcard = {}
 
 ---Called Before Render
@@ -330,7 +330,7 @@ function celeste.Postcard:DisplayRoutine() end
 ---@field RespawnPoint Vector2
 ---@field LevelData LevelData
 ---@field MapData MapData
----@field DeathsInCurrentLevel integer
+---@field DeathsInCurrentLevel int
 ---@field Audio AudioState
 ---@field HitCheckpoint boolean
 ---@field Inventory PlayerInventory

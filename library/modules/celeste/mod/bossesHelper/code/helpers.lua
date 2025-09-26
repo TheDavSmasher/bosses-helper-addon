@@ -20,7 +20,7 @@ function helpers.BossesHelperUtils.PlayAnim(tself, anim) end
 ---Create a Position Tween on the given entity.
 ---@param tself Entity The Entity to move.
 ---@param target Vector2 The target position.
----@param time number The time to take.
+---@param time float The time to take.
 ---@param easer? Ease.Easer The Easer for the motion.
 function helpers.BossesHelperUtils.PositionTween(tself, target, time, easer) end
 --#endregion
@@ -53,7 +53,7 @@ function helpers.LuaBossHelper.Say(dialog, funcs) end
 
 ---Execute the given function in the background after the given delay.
 ---@param func function The function to call.
----@param delay number The amount of time to wait to execute the function.
+---@param delay float The amount of time to wait to execute the function.
 function helpers.LuaBossHelper.DoMethodAfterDelay(func, delay) end
 --#endregion
 

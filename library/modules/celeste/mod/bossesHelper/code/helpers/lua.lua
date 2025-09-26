@@ -22,8 +22,8 @@ function lua.LuaMethodWrappers.TeleportTo(scene, player, room, intro, nearest) e
 ---@param player Player The Player to teleport.
 ---@param room string What room the game should attempt to load.
 ---@param relative boolean Whether to keep the player's same relative positions to current room in the new room.
----@param posX number The X position offset.
----@param posY number The Y position offset.
+---@param posX float The X position offset.
+---@param posY float The Y position offset.
 function lua.LuaMethodWrappers.InstantTeleport(scene, player, room, relative, posX, posY) end
 --#endregion
 

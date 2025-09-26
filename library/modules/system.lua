@@ -2,12 +2,15 @@
 
 local system = {}
 
+---@alias float number
+---@alias int integer
+
 --#region Random
 ---@class Random
 system.Random = {}
 
----Return the next random integer
----@return integer
+---Return the next random int
+---@return int
 function system.Random:Next() end
 --#endregion
 

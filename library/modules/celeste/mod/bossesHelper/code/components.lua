@@ -5,7 +5,7 @@ local components = {}
 
 --#region Stopwatch
 ---@class Stopwatch : Component
----@field TimeLeft number
+---@field TimeLeft float
 components.Stopwatch = {}
 
 ---Reset the Stopwatch
@@ -17,7 +17,7 @@ function components.Stopwatch:Reset() end
 components.EntityChecker = {}
 
 ---@class EntityTimer : Component
----@overload fun(timer: number, onTimer: fun(entity: Entity)): EntityTimer
+---@overload fun(timer: float, onTimer: fun(entity: Entity)): EntityTimer
 components.EntityTimer = {}
 
 ---@class EntityFlagger : Component

@@ -14,46 +14,46 @@ function entities.BossEntity:PlayAnim(anim) end
 --#endregion
 
 ---@class AttackEntity : BossEntity
----@overload fun(position: Vector2, hitboxes: Collider, funcOnPlayer: fun(self: Entity, player: Player), startCollidable: boolean, spriteName: string, xScale?: number, yScale?: number) : AttackEntity
+---@overload fun(position: Vector2, hitboxes: Collider, funcOnPlayer: fun(self: Entity, player: Player), startCollidable: boolean, spriteName: string, xScale?: float, yScale?: float) : AttackEntity
 entities.AttackEntity = {}
 
 ---@class BossActor : BossEntity
 ---@field Speed Vector2
----@field GravityMult number
+---@field GravityMult float
 ---@field SolidCollidable boolean
 ---@field Grounded boolean
 entities.BossActor = {}
 
 ---@class AttackActor : BossActor
----@overload fun(position: Vector2, hitboxes: Collider, funcOnPlayer: fun(self: Entity, player: Player), startCollidable: boolean, startSolidCollidable: boolean, spriteName: string, gravMult: number, maxFall: number, xScale?: number, yScale?: number): AttackActor
+---@overload fun(position: Vector2, hitboxes: Collider, funcOnPlayer: fun(self: Entity, player: Player), startCollidable: boolean, startSolidCollidable: boolean, spriteName: string, gravMult: float, maxFall: float, xScale?: float, yScale?: float): AttackActor
 entities.AttackActor = {}
 
 --#region BossPuppet
 ---@class BossPuppet : BossActor
----@field groundFriction number
----@field airFriction number
+---@field groundFriction float
+---@field airFriction float
 ---@field killOnContact boolean
----@field BossHitCooldown number
+---@field BossHitCooldown float
 ---@field BossDamageCooldown Stopwatch
 entities.BossPuppet = {}
 
 ---Maintain a component of the Boss's speed to the value during the time given. 
----@param speed number The speed component's value to maintain.
+---@param speed float The speed component's value to maintain.
 ---@param isX boolean Whether to affect the x component of the speed.
----@param time number The time the value should be maintained.
+---@param time float The time the value should be maintained.
 ---@return IEnumerator
 function entities.BossPuppet:Keep1DSpeed(speed, isX, time) end
 
 ---Set a component of the Boss's speed to the value, kept during the time given.
----@param speed number The speed component's value to maintain.
+---@param speed float The speed component's value to maintain.
 ---@param isX boolean Whether to affect the x component of the speed.
----@param time number The time the value should be maintained.
+---@param time float The time the value should be maintained.
 function entities.BossPuppet:Set1DSpeedDuring(speed, isX, time) end
 
 ---Create a Tween to transition one of the Boss's speed component.
----@param start number The starting speed value.
----@param target number The target speed value.
----@param time number The time the transition should take.
+---@param start float The starting speed value.
+---@param target float The target speed value.
+---@param time float The time the transition should take.
 ---@param isX boolean Whether to affect the x component of the speed.
 ---@param easer? Ease.Easer The Easer to transition the speed value.
 function entities.BossPuppet:Speed1DTween(start, target, time, isX, easer) end
@@ -77,9 +77,9 @@ function entities.BossPuppet:ChangeTargetOption(tag) end
 
 --#region BossController
 ---@class BossController : Entity
----@field Health integer
+---@field Health int
 ---@field IsActing boolean *
----@field CurrentPatternIndex integer
+---@field CurrentPatternIndex int
 ---@field CurrentPatternName string *
 ---@field Random Random
 entities.BossController = {}
@@ -100,22 +100,22 @@ function entities.BossController:InterruptPattern() end
 
 ---Get the index of the pattern with the given name.
 ---@param name string The name of the pattern to search.
----@return integer # The index of the pattern, or -1 if not found.
+---@return int # The index of the pattern, or -1 if not found.
 function entities.BossController:GetPatternIndex(name) end
 
 ---Start the pattern with the given index.
----@param index number
+---@param index float
 function entities.BossController:StartAttackPattern(index) end
 
 ---Force the next attack to be the one found by the given index in the current pattern.
 ---Only applicable to Random patterns.
----@param index number The attack's index to use next.
+---@param index float The attack's index to use next.
 function entities.BossController:ForceNextAttack(index) end
 
 ---Save the current state of the Boss to Session, such that reloads will load the Boss with the given values.
 ---It allows to store the Boss's Health value, the pattern to start at, and whether it should start attacking immediately.
----@param health integer The Health value to set the Boss to on reloads.
----@param index integer The Pattern to start at on reloads.
+---@param health int The Health value to set the Boss to on reloads.
+---@param index int The Pattern to start at on reloads.
 ---@param startImmediately boolean Whether the Boss should start its pattern attacks immediately.
 function entities.BossController:SavePhaseChangeToSession(health, index, startImmediately) end
 
@@ -137,7 +137,7 @@ function entities.BossController:GetStoredObject(key) end
 function entities.BossController:DeleteStoredObject(key) end
 
 ---Decrease the Boss's health by the amount.
----@param amount integer
+---@param amount int
 function entities.BossController:DecreaseHealth(amount) end
 --#endregion
 

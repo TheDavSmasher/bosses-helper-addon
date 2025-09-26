@@ -9,7 +9,7 @@ monocle.Calc = {}
 
 ---Normalize a Vector2 with the given length or to a unit vector
 ---@param tself Vector2
----@param length? number The length to give the Vector2. Defaults to 1.
+---@param length? float The length to give the Vector2. Defaults to 1.
 ---@return Vector2 # The normalized Vector2
 function monocle.Calc.SafeNormalize(tself, length) end
 --#endregion
@@ -19,7 +19,7 @@ function monocle.Calc.SafeNormalize(tself, length) end
 monocle.Camera = {}
 
 ---@class Circle : Collider
----@overload fun(radius: number, x: number, y: number): Circle
+---@overload fun(radius: float, x: float, y: float): Circle
 monocle.Circle = {}
 
 ---@class Collider : Component
@@ -39,7 +39,7 @@ monocle.Coroutine = {}
 ---@class Ease : { [string]: Ease.Easer }
 monocle.Ease = {}
 
----@alias Ease.Easer fun(t: number): number
+---@alias Ease.Easer fun(t: float): float
 
 ---Invert an [Ease.Easer](lua://Ease.Easer).
 ---@param easer Ease.Easer The [Ease.Easer](lua://Ease.Easer) to invert
@@ -56,7 +56,7 @@ monocle.Engine = {}
 ---@field Position Vector2
 ---@field Center Vector2
 ---@field Collidable boolean
----@field Depth integer
+---@field Depth int
 ---@overload fun(): Entity
 monocle.Entity = {}
 
@@ -70,7 +70,7 @@ monocle.Entity.add = monocle.Entity.Add
 --#endregion
 
 ---@class Hitbox
----@overload fun(width: number, height: number, x: number, y: number): Hitbox
+---@overload fun(width: float, height: float, x: float, y: float): Hitbox
 monocle.Hitbox = {}
 
 --#region Sprite
@@ -100,7 +100,7 @@ monocle.Scene.remove = monocle.Scene.Remove
 --#endregion
 
 ---@class StateMachine
----@field State integer
+---@field State int
 ---@field Locked boolean
 monocle.StateMachine = {}
 
