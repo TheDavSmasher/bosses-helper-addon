@@ -75,11 +75,21 @@ celeste.BadelineOldsite = {}
 ---@field Strength number
 celeste.BloomRenderer = {}
 
+--#region CollisionData
+---@class CollisionData
+---@field Direction Vector2
+---@field Moved Vector2
+---@field TargetPosition Vector2
+---@field Hit Platform
+---@field Pusher Solid
+---@field Empty CollisionData static
+celeste.CollisionData = {}
+--#endregion
+
 --#region CutsceneEntity
 ---@class CutsceneEntity : Entity
 celeste.CutsceneEntity = {}
 
----comment
 ---@param target Vector2
 ---@param duration number
 ---@param ease? Ease.Easer
@@ -136,7 +146,7 @@ celeste.EntityID = {}
 ---@enum Facings
 celeste.Facings = {}
 
----@class InvisibleBarrier : Entity
+---@class InvisibleBarrier : Solid
 ---@overload fun(pos: Vector2, width: number, height: number): InvisibleBarrier
 celeste.InvisibleBarrier = {}
 
@@ -233,6 +243,9 @@ function celeste.MapData:GetAt(at) end
 ---@class MiniTextbox : Entity
 ---@overload fun(dialogId: string): MiniTextbox
 celeste.MiniTextbox = {}
+
+---@class Platform : Entity
+celeste.Platform = {}
 
 --#region Player
 ---@class Player : Actor
@@ -356,6 +369,9 @@ celeste.SFX = {}
 ---@return string # The event name, or handle if not found.
 function celeste.SFX.EventnameByHandle(handle) end
 --#endregion
+
+---@class Solid : Platform
+celeste.Solid = {}
 
 --#region SoundSource
 ---@class SoundSource : Component
