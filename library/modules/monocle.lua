@@ -4,7 +4,7 @@
 local monocle = {}
 
 --#region Calc
----@class Calc
+---@class Monocle.Calc
 monocle.Calc = {}
 
 ---Normalize a Vector2 with the given length or to a unit vector
@@ -16,27 +16,37 @@ function monocle.Calc.SafeNormalize(tself, length) end
 
 ---@class Camera
 ---@field Position Vector2
-monocle.Camera = {}
+local camera = {}
 
----@class Circle : Collider
+--#region Circle
+---@class Monocle.Circle
 ---@overload fun(radius: float, x: float, y: float): Circle
 monocle.Circle = {}
 
+---@class Circle : Collider
+local circle = {}
+--#endregion
+
 ---@class Collider : Component
-monocle.Collider = {}
+local collider = {}
 
 ---@class ColliderList : Collider
-monocle.ColliderList = {}
+local colliderList = {}
 
 ---@class Component
-monocle.Component = {}
+local _component = {}
 
----@class Coroutine : Component
+--#region Coroutine
+---@class Monocle.Coroutine
 ---@overload fun(logic: IEnumerator): Coroutine
 monocle.Coroutine = {}
 
+---@class Coroutine : Component
+local coroutine = {}
+--#endregion
+
 --#region Ease
----@class Ease : { [string]: Ease.Easer }
+---@class Monocle.Ease : { [string]: Ease.Easer }
 monocle.Ease = {}
 
 ---@alias Ease.Easer fun(t: float): float
@@ -47,61 +57,69 @@ monocle.Ease = {}
 function monocle.Ease.Invert(easer) end
 --#endregion
 
----@class Engine
+---@class Monocle.Engine
 ---@field Scene Scene
 monocle.Engine = {}
 
 --#region Entity
+---@class Monocle.Entity
+---@overload fun(): Entity
+monocle.Entity = {}
+
 ---@class Entity
 ---@field Position Vector2
 ---@field Center Vector2
 ---@field Collidable boolean
 ---@field Depth int
----@overload fun(): Entity
-monocle.Entity = {}
+local _entity = {}
 
-function monocle.Entity:RemoveSelf() end
+function _entity:RemoveSelf() end
 
 ---Add a Component to the Entity.
 ---@param component Component The Component to add.
-function monocle.Entity:Add(component) end
+function _entity:Add(component) end
 
-monocle.Entity.add = monocle.Entity.Add
+_entity.add = _entity.Add
 --#endregion
 
----@class Hitbox
+--#region Hitbox
+---@class Monocle.Hitbox
 ---@overload fun(width: float, height: float, x: float, y: float): Hitbox
 monocle.Hitbox = {}
+
+---@class Hitbox
+local hitbox = {}
+--#endregion
 
 --#region Sprite
 ---@class Sprite
 ---@field Scale Vector2
-monocle.Sprite = {}
+local sprite = {}
 
 ---Play an animation.
 ---@param anim string The animation to play.
-function monocle.Sprite:Play(anim) end
+function sprite:Play(anim) end
 --#endregion
 
 --#region Scene
 ---@class Scene
-monocle.Scene = {}
+local scene = {}
 
 ---Add an [Entity](lua://Entity) onto the [Scene](lua://Scene).
 ---@param entity Entity The [Entity](lua://Entity) to add.
-function monocle.Scene:Add(entity) end
+function scene:Add(entity) end
 
 ---Remove an [Entity](lua://Entity) from the [Scene](lua://Scene).
 ---@param entity Entity The [Entity](lua://Entity) to remove.
-function monocle.Scene:Remove(entity) end
+function scene:Remove(entity) end
 
-monocle.Scene.add = monocle.Scene.Add
-monocle.Scene.remove = monocle.Scene.Remove
+scene.add = scene.Add
+scene.remove = scene.Remove
 --#endregion
 
 ---@class StateMachine
 ---@field State int
 ---@field Locked boolean
-monocle.StateMachine = {}
+local stateMachine = {}
 
 return monocle

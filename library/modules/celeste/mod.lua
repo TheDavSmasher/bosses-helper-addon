@@ -1,14 +1,14 @@
 ---@meta Celeste.Mod
 
----@class Mod : { [string]: table }
+---@class Celeste.Mod : { [string]: table }
 local mod = {}
 
 ---@class EverestModuleMetadata
 ---@field Name string
-mod.EverestModuleMetadata = {}
+local everestModuleMetadata = {}
 
 --#region Logger
----@class Logger
+---@class Celeste.Mod.Logger
 mod.Logger = {}
 
 ---Log an Error message
@@ -22,15 +22,14 @@ function mod.Logger.Error(tag, message) end
 function mod.Logger.Info(tag, message) end
 --#endregion
 
----@alias ProxyResume fun(self: LuaCoroutineProxy, ...: any): boolean, string|LuaException|nil
-
----@class LuaCoroutineProxy
----@field resume ProxyResume
----@field value thread
-
----@class LuaCoroutine : IEnumerator
+--#region LuaCoroutine
+---@class Celeste.Mod.LuaCoroutine
 ---@overload fun(proxy: LuaCoroutineProxy): LuaCoroutine
 mod.LuaCoroutine = {}
+
+---@class LuaCoroutine : IEnumerator
+local luaCoroutine = {}
+--#endregion
 
 ---@module "Celeste.Mod.BossesHelper"
 mod.BossesHelper = {}

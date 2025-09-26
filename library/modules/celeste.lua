@@ -1,7 +1,5 @@
 ---@meta Celeste
 
----@module "Monocle"
-
 ---@class Celeste
 local celeste = {}
 
@@ -9,54 +7,57 @@ local celeste = {}
 celeste.Mod = {}
 
 ---@class Actor : Entity
-celeste.Actor = {}
+local actor = {}
 
 --#region Audio
----@class Audio
+---@class Celeste.Audio
 ---@field CurrentMusic string
 celeste.Audio = {}
 
 ---Play the given audio event at the given global position.
 ---@param event string The event name to play.
 ---@param position? Vector2 Where to play the audio.
----@return FMOD.Studio.EventInstance # The Audio EventInstance
+---@return EventInstance # The Audio EventInstance
 function celeste.Audio.Play(event, position) end
 --#endregion
 
 --#region AudioState
 ---@class AudioState
 ---@field Music AudioTrackState
-celeste.AudioState = {}
+local audioState = {}
 
 ---Apply the current changes to the Audio State
 ---@param forceSixteenthNoteHack? boolean
-function celeste.AudioState:Apply(forceSixteenthNoteHack) end
+function audioState:Apply(forceSixteenthNoteHack) end
 --#endregion
 
 --#region AudioTrackState
 ---@class AudioTrackState
 ---@field Event string
 ---@field Progress int
-celeste.AudioTrackState = {}
+local audioTrackState = {}
 
 ---Update the given audio layer.
 ---@param layer int The layer to update.
 ---@param value boolean|float The value to give the layer.
-function celeste.AudioTrackState:Layer(layer, value) end
+function audioTrackState:Layer(layer, value) end
 --#endregion
 
 --#region BadelineDummy
----@class BadelineDummy : Entity
----@field Sprite Sprite
----@field Floatness float
+---@class Celeste.BadelineDummy
 ---@overload fun(pos: Vector2): BadelineDummy
 celeste.BadelineDummy = {}
 
+---@class BadelineDummy : Entity
+---@field Sprite Sprite
+---@field Floatness float
+local badelineDummy = {}
+
 ---@param level Level
 ---@param silent? boolean
-function celeste.BadelineDummy:Appear(level, silent) end
+function badelineDummy:Appear(level, silent) end
 
-function celeste.BadelineDummy:Vanish() end
+function badelineDummy:Vanish() end
 
 ---@param target Vector2
 ---@param turnAtEndTo? int
@@ -64,31 +65,42 @@ function celeste.BadelineDummy:Vanish() end
 ---@param fadeLight? boolean
 ---@param quickEnd? boolean
 ---@return IEnumerator
-function celeste.BadelineDummy:FloatTo(target, turnAtEndTo, faceDir, fadeLight, quickEnd) end
+function badelineDummy:FloatTo(target, turnAtEndTo, faceDir, fadeLight, quickEnd) end
 --#endregion
 
----@class BadelineOldsite : Entity
+--#region BadelineOldsite
+---@class Celeste.BadelineOldsite
 ---@overload fun(position: Vector2, index: int): BadelineOldsite
 celeste.BadelineOldsite = {}
 
+---@class BadelineOldsite : Entity
+local badelineOldside = {}
+--#endregion
+
 ---@class BloomRenderer
 ---@field Strength float
-celeste.BloomRenderer = {}
+local bloomRenderer = {}
 
 --#region CollisionData
+---@class Celeste.CollisionData
+---@field Empty CollisionData
+celeste.CollisionData = {}
+
 ---@class CollisionData
 ---@field Direction Vector2
 ---@field Moved Vector2
 ---@field TargetPosition Vector2
 ---@field Hit Platform
 ---@field Pusher Solid
----@field Empty CollisionData static
-celeste.CollisionData = {}
+local collisionData = {}
 --#endregion
 
 --#region CutsceneEntity
----@class CutsceneEntity : Entity
+---@class Celeste.CutsceneEntity
 celeste.CutsceneEntity = {}
+
+---@class CutsceneEntity : Entity
+local _cutsceneEntity = {}
 
 ---@param target Vector2
 ---@param duration float
@@ -99,11 +111,11 @@ function celeste.CutsceneEntity.CameraTo(target, duration, ease, delay) end
 
 ---@param level Level
 ---@param removeSelf? boolean
-function celeste.CutsceneEntity:EndCutscene(level, removeSelf) end
+function _cutsceneEntity:EndCutscene(level, removeSelf) end
 --#endregion
 
 --#region Dialog
----@class Dialog
+---@class Celeste.Dialog
 celeste.Dialog = {}
 
 ---Get the Dialog given its name
@@ -114,10 +126,10 @@ function celeste.Dialog.Get(name) end
 
 --#region DisplacementRenderer
 ---@class DisplacementRenderer
-celeste.DisplacementRenderer = {}
+local displacementRenderer = {}
 
 ---@class Burst
-celeste.DisplacementRenderer.Burst = {}
+local burst = {}
 
 ---@param position Vector2
 ---@param duration float
@@ -127,7 +139,7 @@ celeste.DisplacementRenderer.Burst = {}
 ---@param alphaEaser? Ease.Easer
 ---@param radiusEaser? Ease.Easer
 ---@return Burst
-function celeste.DisplacementRenderer:AddBurst(position, duration, radiusFrom, radiusTo, alpha, alphaEaser, radiusEaser) end
+function displacementRenderer:AddBurst(position, duration, radiusFrom, radiusTo, alpha, alphaEaser, radiusEaser) end
 --#endregion
 
 ---@class EntityData
@@ -137,23 +149,38 @@ function celeste.DisplacementRenderer:AddBurst(position, duration, radiusFrom, r
 ---@field Width int
 ---@field Height int
 ---@field Values Dictionary<string, any>
-celeste.EntityData = {}
+local entityData = {}
 
----@class EntityID
+--#region EntityID
+---@class Celeste.EntityID
 ---@overload fun(level: string, id: int): EntityID
 celeste.EntityID = {}
+
+---@class EntityID
+local entityID = {}
+--#endregion
 
 ---@enum Facings
 celeste.Facings = {}
 
----@class InvisibleBarrier : Solid
+--#region InvisibleBarrier
+---@class Celeste.InvisibleBarrier
 ---@overload fun(pos: Vector2, width: float, height: float): InvisibleBarrier
 celeste.InvisibleBarrier = {}
 
----@class Key : Entity
----@field ID EntityID
+---@class InvisibleBarrier : Solid
+local invisibleBarrier = {}
+--#endregion
+
+--#region Key
+---@class Celeste.Key
 ---@overload fun(player: Player, id: EntityID): Key
 celeste.Key = {}
+
+---@class Key : Entity
+---@field ID EntityID
+local key = {}
+--#endregion
 
 --#region Level
 ---@class Level : Scene
@@ -168,86 +195,102 @@ celeste.Key = {}
 ---@field CanRetry boolean
 ---@field PauseLock boolean
 ---@field InCutscene boolean
-celeste.Level = {}
+local level = {}
 
 ---Get the Spawnpoint closest to the target.
 ---@param at Vector2 Where to search a Spawnpoint.
 ---@return Vector2
-function celeste.Level:GetSpawnPoint(at) end
+function level:GetSpawnPoint(at) end
 
 ---Complete the current area/level
 ---@param spotlightWipe? boolean
 ---@param skipScreenWipe? boolean
 ---@param skipCompleteScreen? boolean
 ---@return userdata Screenwipe
-function celeste.Level:CompleteArea(spotlightWipe, skipScreenWipe, skipCompleteScreen) end
+function level:CompleteArea(spotlightWipe, skipScreenWipe, skipCompleteScreen) end
 
 ---Start a screen shake.
 ---@param time? float The duration of the shake.
-function celeste.Level:Shake(time) end
+function level:Shake(time) end
 
 ---Start a screen shake with a direction.
 ---@param dir Vector2
 ---@param time? float The duration of the shake.
-function celeste.Level:DirectionalShake(dir, time) end
+function level:DirectionalShake(dir, time) end
 
 ---Instantly change to the next colorgrade.
 ---@param next string The next colorgrade.
-function celeste.Level:SnapColorGrade(next) end
+function level:SnapColorGrade(next) end
 
 ---Change to the other colorgrade over the timer.
 ---@param next string The next colorgrade
 ---@param time? float The time to make the change over.
-function celeste.Level:NextColorGrade(next, time) end
+function level:NextColorGrade(next, time) end
 
 ---Cancel the current Cutscene.
-function celeste.Level:CancelCutscene() end
+function level:CancelCutscene() end
 
 ---@param screenSpaceFocusPoint Vector2
 ---@param zoom float
 ---@param duration float
 ---@return IEnumerator
-function celeste.Level:ZoomTo(screenSpaceFocusPoint, zoom, duration) end
+function level:ZoomTo(screenSpaceFocusPoint, zoom, duration) end
 
 ---@param screenSpaceFocusPoint Vector2
 ---@param zoom float
 ---@param duration float
 ---@return IEnumerator
-function celeste.Level:ZoomAcross(screenSpaceFocusPoint, zoom, duration) end
+function level:ZoomAcross(screenSpaceFocusPoint, zoom, duration) end
 
 ---@param duration float
 ---@return IEnumerator
-function celeste.Level:ZoomBack(duration) end
+function level:ZoomBack(duration) end
 
-function celeste.Level:ResetZoom() end
+function level:ResetZoom() end
 --#endregion
 
 ---@class LevelData
 ---@field Bounds Rectangle
-celeste.LevelData = {}
+local levelData = {}
 
----@class LevelLoader : Scene
+--#region LevelLoader
+---@class Celeste.LevelLoader
 ---@overload fun(session: Session, respawn: Vector2): LevelLoader
 celeste.LevelLoader = {}
 
+---@class LevelLoader : Scene
+local levelLoader = {}
+--#endregion
+
 --#region MapData
 ---@class MapData
-celeste.MapData = {}
+local mapData = {}
 
 ---Get the LevelData at the Offset.
 ---@param at Vector2 Offset to get the data from.
 ---@return LevelData
-function celeste.MapData:GetAt(at) end
+function mapData:GetAt(at) end
 --#endregion
 
----@class MiniTextbox : Entity
+--#region MiniTextbox
+---@class Celeste.MiniTextbox
 ---@overload fun(dialogId: string): MiniTextbox
 celeste.MiniTextbox = {}
 
+---@class MiniTextbox : Entity
+local miniTextbox = {}
+--#endregion
+
 ---@class Platform : Entity
-celeste.Platform = {}
+local _platform = {}
 
 --#region Player
+---@class Celeste.Player
+celeste.Player = {}
+
+---@enum IntroTypes
+celeste.Player.IntroTypes = {}
+
 ---@class Player : Actor
 ---@field IntroType IntroTypes
 ---@field Facing Facings
@@ -260,19 +303,19 @@ celeste.Platform = {}
 ---@field AutoJumpTimer float
 ---@field Speed Vector2
 ---@field Sprite Sprite
-celeste.Player = {}
+local player = {}
 
 ---Make the player Die
 ---@param dir Vector2
 ---@param evenIfInvincible? boolean
 ---@param registerDeathInStats? boolean
 ---@return userdata deadBody
-function celeste.Player:Die(dir, evenIfInvincible, registerDeathInStats) end
+function player:Die(dir, evenIfInvincible, registerDeathInStats) end
 
 ---Check if the Player is touching ground.
 ---@param at? float Vertical offset to check at.
 ---@return boolean
-function celeste.Player:OnGround(at) end
+function player:OnGround(at) end
 
 ---Make the player walk in Dummy state.
 ---@param x float The target x.
@@ -280,51 +323,73 @@ function celeste.Player:OnGround(at) end
 ---@param speedMultiplier? float
 ---@param keepWalkingIntoWalls? boolean
 ---@return IEnumerator
-function celeste.Player:DummyWalkTo(x, walkBackwards, speedMultiplier, keepWalkingIntoWalls) end
+function player:DummyWalkTo(x, walkBackwards, speedMultiplier, keepWalkingIntoWalls) end
 
 ---Make the player run in Dummy state.
 ---@param x float The target x.
 ---@param fastAnimation? boolean
 ---@return IEnumerator
-function celeste.Player:DummyRunTo(x, fastAnimation) end
+function player:DummyRunTo(x, fastAnimation) end
 
 ---Make the player jump.
 ---@param particles? boolean Whether to display dust particles.
 ---@param playSfx? boolean Whether to play an SFX.
-function celeste.Player:Jump(particles, playSfx) end
+function player:Jump(particles, playSfx) end
 
 ---Start the Player's StartFly state
-function celeste.Player:StartStarFly() end
+function player:StartStarFly() end
 
 ---Start the Player's CassetteFly state.
 ---@param target Vector2 The target end position.
 ---@param control Vector2 The flying arc middle point.
-function celeste.Player:StartCassetteFly(target, control) end
+function player:StartCassetteFly(target, control) end
 
-function celeste.Player:CreateSplitParticles() end
-
----@enum IntroTypes
-celeste.Player.IntroTypes = {}
+function player:CreateSplitParticles() end
 --#endregion
 
----@class PlayerInventory
+--#region PlayerInventory
+---@class Celeste.PlayerInventory
+---@field Default PlayerInventory
+---@field Prologue PlayerInventory
+---@field OldSite PlayerInventory
+---@field CH6End PlayerInventory
+---@field TheSummit PlayerInventory
+---@field Core PlayerInventory
+---@field Farewell PlayerInventory
 celeste.PlayerInventory = {}
 
+---@class PlayerInventory
+---@field Dashes int
+---@field DreamDash bool
+---@field Backpack bool
+---@field NoRefills bool
+local playerInventory = {}
+--#endregion
+
 --#region Postcard
----@class Postcard : Entity
+---@class Celeste.Postcard
 ---@overload fun(msg: string, sfxIn: string, sfxOut: string): Postcard
 ---@overload fun(msg: string, area: int): Postcard
 celeste.Postcard = {}
 
+---@class Postcard : Entity
+local postcard = {}
+
 ---Called Before Render
-function celeste.Postcard:BeforeRender() end
+function postcard:BeforeRender() end
 
 ---The Routine to display the Postcart.
 ---@return IEnumerator
-function celeste.Postcard:DisplayRoutine() end
+function postcard:DisplayRoutine() end
 --#endregion
 
 --#region Session
+---@class Celeste.Session
+celeste.Session = {}
+
+---@enum CoreModes
+celeste.Session.CoreModes = {}
+
 ---@class Session
 ---@field Level string
 ---@field RespawnPoint Vector2
@@ -336,32 +401,29 @@ function celeste.Postcard:DisplayRoutine() end
 ---@field Inventory PlayerInventory
 ---@field Keys HashSet<EntityID>
 ---@field LevelFlags HashSet<string>
-celeste.Session = {}
+local session = {}
 
 ---Update the Level's Starting Dashes
-function celeste.Session:UpdateLevelStartDashes() end
+function session:UpdateLevelStartDashes() end
 
 ---Get the session flag value
 ---@param flag string
 ---@return boolean
-function celeste.Session:GetFlag(flag) end
+function session:GetFlag(flag) end
 
 ---Set the session flag value.
 ---@param flag string
 ---@param value boolean
-function celeste.Session:SetFlag(flag, value) end
+function session:SetFlag(flag, value) end
 
 ---Get the Level Flag value
 ---@param flag string
 ---@return boolean
-function celeste.Session:GetLevelFlag(flag) end
-
----@enum CoreModes
-celeste.Session.CoreModes = {}
+function session:GetLevelFlag(flag) end
 --#endregion
 
 --#region SFX
----@class SFX
+---@class Celeste.SFX
 celeste.SFX = {}
 
 ---Get an event name by its handle.
@@ -371,21 +433,24 @@ function celeste.SFX.EventnameByHandle(handle) end
 --#endregion
 
 ---@class Solid : Platform
-celeste.Solid = {}
+local solid = {}
 
 --#region SoundSource
----@class SoundSource : Component
+---@class Celeste.SoundSource
 ---@overload fun(): SoundSource
 celeste.SoundSource = {}
+
+---@class SoundSource : Component
+local soundSource = {}
 
 ---Play the given event on the SoundSource.
 ---@param event string The event to play.
 ---@return SoundSource self
-function celeste.SoundSource:Play(event) end
+function soundSource:Play(event) end
 --#endregion
 
 --#region Textbox
----@class Textbox
+---@class Celeste.Textbox
 celeste.Textbox = {}
 
 ---Display a Textbox with the given dialog
@@ -394,8 +459,13 @@ celeste.Textbox = {}
 function celeste.Textbox.Say(dialog) end
 --#endregion
 
----@class WindController: Entity
+--#region WindController
+---@class Celeste.WindController
 ---@overload fun(patterns: userdata): WindController
 celeste.WindController = {}
+
+---@class WindController: Entity
+local windController = {}
+--#endregion
 
 return celeste

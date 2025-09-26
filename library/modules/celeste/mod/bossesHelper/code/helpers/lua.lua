@@ -1,10 +1,10 @@
 ---@meta Celeste.Mod.BossesHelper.Code.Helpers.Lua
 
----@class Lua
+---@class Celeste.Mod.BossesHelper.Code.Helpers.Lua
 local lua = {}
 
 --#region LuaMethodWrappers
----@class LuaMethodWrappers
+---@class Celeste.Mod.BossesHelper.Code.Helpers.Lua.LuaMethodWrappers
 lua.LuaMethodWrappers = {}
 
 --#region Teleport
@@ -120,8 +120,13 @@ function lua.LuaMethodWrappers.EntityHasComponent(entity, name, prefix) end
 
 --#endregion
 
----@class LuaFuncCoroutine : LuaCoroutine
+--#region LuaFuncCoroutine
+---@class Celeste.Mod.BossesHelper.Code.Helpers.Lua.LuaFuncCoroutine
 ---@overload fun(proxy: LuaCoroutineProxy): LuaFuncCoroutine
 lua.LuaFuncCoroutine = {}
+
+---@class LuaFuncCoroutine : LuaCoroutine
+local luaFuncCoroutine = {}
+--#endregion
 
 return lua

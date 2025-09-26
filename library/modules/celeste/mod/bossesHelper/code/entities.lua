@@ -1,32 +1,44 @@
 ---@meta Celeste.Mod.BossesHelper.Code.Entities
 
----@class Entities
+---@class Celeste.Mod.BossesHelper.Code.Entities
 local entities = {}
 
 --#region BossEntity
 ---@class BossEntity : Actor
 ---@field Sprite Sprite
-entities.BossEntity = {}
+local _bossEntity = {}
 
 ---Play an animation on the attached Sprite.
 ---@param anim string The animation to play
-function entities.BossEntity:PlayAnim(anim) end
+function _bossEntity:PlayAnim(anim) end
 --#endregion
 
----@class AttackEntity : BossEntity
+--#region AttackEntity
+---@class Celeste.Mod.BossesHelper.Code.Entities.AttackEntity
 ---@overload fun(position: Vector2, hitboxes: Collider, funcOnPlayer: fun(self: Entity, player: Player), startCollidable: boolean, spriteName: string, xScale?: float, yScale?: float) : AttackEntity
 entities.AttackEntity = {}
 
+---@class AttackEntity : BossEntity
+local attackEntity = {}
+--#endregion
+
+--#region BossActor
 ---@class BossActor : BossEntity
 ---@field Speed Vector2
 ---@field GravityMult float
 ---@field SolidCollidable boolean
 ---@field Grounded boolean
-entities.BossActor = {}
+local _bossActor = {}
+--#endregion
 
----@class AttackActor : BossActor
+--#region AttackActor
+---@class Celeste.Mod.BossesHelper.Code.Entities.AttackActor
 ---@overload fun(position: Vector2, hitboxes: Collider, funcOnPlayer: fun(self: Entity, player: Player), startCollidable: boolean, startSolidCollidable: boolean, spriteName: string, gravMult: float, maxFall: float, xScale?: float, yScale?: float): AttackActor
 entities.AttackActor = {}
+
+---@class AttackActor : BossActor
+local attackActor = {}
+--#endregion
 
 --#region BossPuppet
 ---@class BossPuppet : BossActor
@@ -35,20 +47,20 @@ entities.AttackActor = {}
 ---@field killOnContact boolean
 ---@field BossHitCooldown float
 ---@field BossDamageCooldown Stopwatch
-entities.BossPuppet = {}
+local bossPuppet = {}
 
 ---Maintain a component of the Boss's speed to the value during the time given. 
 ---@param speed float The speed component's value to maintain.
 ---@param isX boolean Whether to affect the x component of the speed.
 ---@param time float The time the value should be maintained.
 ---@return IEnumerator
-function entities.BossPuppet:Keep1DSpeed(speed, isX, time) end
+function bossPuppet:Keep1DSpeed(speed, isX, time) end
 
 ---Set a component of the Boss's speed to the value, kept during the time given.
 ---@param speed float The speed component's value to maintain.
 ---@param isX boolean Whether to affect the x component of the speed.
 ---@param time float The time the value should be maintained.
-function entities.BossPuppet:Set1DSpeedDuring(speed, isX, time) end
+function bossPuppet:Set1DSpeedDuring(speed, isX, time) end
 
 ---Create a Tween to transition one of the Boss's speed component.
 ---@param start float The starting speed value.
@@ -56,23 +68,23 @@ function entities.BossPuppet:Set1DSpeedDuring(speed, isX, time) end
 ---@param time float The time the transition should take.
 ---@param isX boolean Whether to affect the x component of the speed.
 ---@param easer? Ease.Easer The Easer to transition the speed value.
-function entities.BossPuppet:Speed1DTween(start, target, time, isX, easer) end
+function bossPuppet:Speed1DTween(start, target, time, isX, easer) end
 
 ---Change the Boss's Hitbox to the one specified.
 ---@param tag string The Hitbox group tag to change to.
-function entities.BossPuppet:ChangeHitboxOption(tag) end
+function bossPuppet:ChangeHitboxOption(tag) end
 
 ---Change the Boss's Hurtbox to the one specified.
 ---@param tag string The Hurtbox group tag to change to.
-function entities.BossPuppet:ChangeHurtboxOption(tag) end
+function bossPuppet:ChangeHurtboxOption(tag) end
 
 ---Change the Boss's Bouncebox to the one specified.
 ---@param tag string The Bouncebox group tag to change to.
-function entities.BossPuppet:ChangeBounceboxOption(tag) end
+function bossPuppet:ChangeBounceboxOption(tag) end
 
 ---Change the Boss's Target to the one specified.
 ---@param tag string The Target group tag to change to.
-function entities.BossPuppet:ChangeTargetOption(tag) end
+function bossPuppet:ChangeTargetOption(tag) end
 --#endregion
 
 --#region BossController
@@ -82,88 +94,85 @@ function entities.BossPuppet:ChangeTargetOption(tag) end
 ---@field CurrentPatternIndex int
 ---@field CurrentPatternName string *
 ---@field Random Random
-entities.BossController = {}
+local bossController = {}
 
 ---Add an Entity to the scene tracked by the Boss.
 ---@param entity Entity
-function entities.BossController:AddEntity(entity) end
+function bossController:AddEntity(entity) end
 
 ---Remove an Entity from the scene that the Boss is tracking.
 ---@param entity Entity The entity to destroy/remove.
-function entities.BossController:DestroyEntity(entity) end
+function bossController:DestroyEntity(entity) end
 
 ---Remove all entities tracked by the Boss from the Scene.
-function entities.BossController:DestroyAll() end
+function bossController:DestroyAll() end
 
 ---Interrupt the currently executing Pattern.
-function entities.BossController:InterruptPattern() end
+function bossController:InterruptPattern() end
 
 ---Get the index of the pattern with the given name.
 ---@param name string The name of the pattern to search.
 ---@return int # The index of the pattern, or -1 if not found.
-function entities.BossController:GetPatternIndex(name) end
+function bossController:GetPatternIndex(name) end
 
 ---Start the pattern with the given index.
 ---@param index float
-function entities.BossController:StartAttackPattern(index) end
+function bossController:StartAttackPattern(index) end
 
 ---Force the next attack to be the one found by the given index in the current pattern.
 ---Only applicable to Random patterns.
 ---@param index float The attack's index to use next.
-function entities.BossController:ForceNextAttack(index) end
+function bossController:ForceNextAttack(index) end
 
 ---Save the current state of the Boss to Session, such that reloads will load the Boss with the given values.
 ---It allows to store the Boss's Health value, the pattern to start at, and whether it should start attacking immediately.
 ---@param health int The Health value to set the Boss to on reloads.
 ---@param index int The Pattern to start at on reloads.
 ---@param startImmediately boolean Whether the Boss should start its pattern attacks immediately.
-function entities.BossController:SavePhaseChangeToSession(health, index, startImmediately) end
+function bossController:SavePhaseChangeToSession(health, index, startImmediately) end
 
 ---Remove the Boss from the scene.
 ---@param permanent boolean Whether the Boss should not load again on scene reloads.
-function entities.BossController:RemoveBoss(permanent) end
+function bossController:RemoveBoss(permanent) end
 
 ---Store an object/value in the Boss to reference later.
 ---@param key string The key to store the object under.
 ---@param object any The object/value to store.
-function entities.BossController:StoreObject(key, object) end
+function bossController:StoreObject(key, object) end
 
 ---Get an object/value stored in the Boss.
 ---@param key string The key the object/value was stored under.
-function entities.BossController:GetStoredObject(key) end
+function bossController:GetStoredObject(key) end
 
 ---Remove an onject/value from the Boss's storage.
 ---@param key string The key of the object/value to remove.
-function entities.BossController:DeleteStoredObject(key) end
+function bossController:DeleteStoredObject(key) end
 
 ---Decrease the Boss's health by the amount.
 ---@param amount int
-function entities.BossController:DecreaseHealth(amount) end
+function bossController:DecreaseHealth(amount) end
 --#endregion
 
 ---@class GlobalSavePoint : Entity
-entities.GlobalSavePoint = {}
+local globalSavePoint = {}
 
 ---@class BadelineSidekick : Entity
-entities.BadelineSidekick = {}
+local badelineSidekick = {}
 
 --#region Health Displays
----@class HealthDisplays
-entities.HealthDisplays = {}
-
 ---@class HealthDisplay : Entity
-entities.HealthDisplays.HealthDisplay = {}
+local healthDisplay = {}
 
 ---@class HealthIconList : HealthDisplay
-entities.HealthDisplays.HealthIconList = {}
+local healthIconList = {}
 --#endregion
 
 --#region HealthSystemManager
 ---@class HealthSystemManager : Entity
-entities.HealthSystemManager = {}
+local healthSystemManager = {}
 
 ---@class PlayerHealthBar : HealthIconList
-entities.HealthSystemManager.PlayerHealthBar = {}
+local playerHealthBar = {}
 --#endregion
 
 return entities

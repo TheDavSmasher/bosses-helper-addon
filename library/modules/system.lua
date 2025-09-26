@@ -1,55 +1,63 @@
 ---@meta System
 
+---@class System
 local system = {}
 
 ---@alias float number
 ---@alias int integer
+---@alias bool boolean
+
+--#region Exception
+---@class System.Exception
+---@overload fun(message?: string): Exception
+system.Exception = {}
+
+---@class Exception
+local exception = {}
+--#endregion
 
 --#region Random
 ---@class Random
-system.Random = {}
+local random = {}
 
 ---Return the next random int
 ---@return int
-function system.Random:Next() end
+function random:Next() end
 --#endregion
 
 --#region Collections
-system.Collections = {}
-
 ---@class IEnumerator
-system.Collections.IEnumerator = {}
+local iEnumerator = {}
 
 --#region Generic
-system.Collections.Generic = {}
 
 --#region Dictionary
 ---@class Dictionary<K, V>
-system.Collections.Generic.Dictionary = {}
+local dictionary = {}
 
 ---Add an element to the Dictionary with the given key.
 ---@generic K, V
 ---@param self Dictionary<K, V>
 ---@param key K The key of the new value.
 ---@param value V The value to add.
-function system.Collections.Generic.Dictionary:Add(key, value) end
+function dictionary:Add(key, value) end
 --#endregion
 
 --#region HashSet
 ---@class HashSet<T>
-system.Collections.Generic.HashSet = {}
+local hashSet = {}
 
 ---Add a value to the HashSet.
 ---@generic T
 ---@param self HashSet<T>
 ---@param value T
-function system.Collections.Generic.HashSet:Add(value) end
+function hashSet:Add(value) end
 
 ---Remove a value from the HashSet.
 ---@generic T
 ---@param self HashSet<T>
 ---@param value T
-function system.Collections.Generic.HashSet:Remove(value) end
+function hashSet:Remove(value) end
 --#endregion
 
 --#endregion
@@ -58,15 +66,15 @@ function system.Collections.Generic.HashSet:Remove(value) end
 
 --#region Type
 ---@class Type
-system.Type = {}
+local type = {}
 --#endregion
 
 --#region Object
 ---@class Object
-system.Object = {}
+local object = {}
 
 ---@return Type
-function system.Object:GetType() end
+function object:GetType() end
 
 ---@alias csobject Object
 --#endregion

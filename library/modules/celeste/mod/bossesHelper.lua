@@ -1,10 +1,10 @@
 ---@meta Celeste.Mod.BossesHelper
 
----@class BossesHelper
+---@class Celeste.Mod.BossesHelper
 local bossesHelper = {}
 
 --#region BossesHelperModule
----@class BossesHelperModule
+---@class Celeste.Mod.BossesHelper.BossesHelperModule
 ---@field PlayerHealth int
 bossesHelper.BossesHelperModule = {}
 

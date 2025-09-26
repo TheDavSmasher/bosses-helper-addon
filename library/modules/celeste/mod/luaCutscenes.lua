@@ -1,10 +1,10 @@
 ---@meta Celeste.Mod.LuaCutscenes
 
----@class LuaCutscenes
+---@class Celeste.Mod.LuaCutscenes
 local luaCutscenes = {}
 
 --#region ChoicePrompt
----@class ChoicePrompt : Entity
+---@class Celeste.Mod.LuaCutscenes.ChoicePrompt
 ---@field Choice int
 luaCutscenes.ChoicePrompt = {}
 
@@ -12,6 +12,9 @@ luaCutscenes.ChoicePrompt = {}
 ---@param ... string
 ---@return IEnumerator
 function luaCutscenes.ChoicePrompt.Prompt(...) end
+
+---@class ChoicePrompt : Entity
+local choicePrompt = {}
 --#endregion
 
 return luaCutscenes

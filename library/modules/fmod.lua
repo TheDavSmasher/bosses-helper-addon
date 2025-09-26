@@ -2,9 +2,11 @@
 
 local fmod = {}
 
+--#region Studio
 fmod.Studio = {}
 
----@class FMOD.Studio.EventInstance
-fmod.Studio.EventInstance = {}
+---@class EventInstance
+local eventInstance = {}
+--#endregion
 
 return fmod

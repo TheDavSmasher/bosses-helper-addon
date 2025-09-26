@@ -229,7 +229,7 @@ function helpers.completeArea(spotlightWipe, skipScreenWipe, skipCompleteScreen)
 --- Plays a sound.
 ---@param name string Event for the song.
 ---@param position Vector2? Where the sound is played from.
----@return FMOD.Studio.EventInstance audio The audio instance of the sound.
+---@return EventInstance audio The audio instance of the sound.
 function helpers.playSound(name, position) end
 
 --- Gets all tracked entities by class name.
