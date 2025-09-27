@@ -91,6 +91,8 @@ local badelineOldside = {}
 ---@field Strength float
 local bloomRenderer = {}
 
+---@alias Collision fun(data: CollisionData)
+
 --#region CollisionData
 
 ---@class c__CollisionData
