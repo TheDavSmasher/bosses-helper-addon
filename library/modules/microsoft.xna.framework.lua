@@ -13,7 +13,7 @@ local framework = {}
 local rectangle = {}
 
 --#region Vector2
----@class Microsoft.XNA.Framework.Vector2
+---@class c__Vector2
 ---@field Zero Vector2
 ---@field One Vector2
 ---@field UnitX Vector2

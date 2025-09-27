@@ -4,7 +4,7 @@
 local luaCutscenes = {}
 
 --#region ChoicePrompt
----@class Celeste.Mod.LuaCutscenes.ChoicePrompt
+---@class c__ChoicePrompt
 ---@field Choice int
 luaCutscenes.ChoicePrompt = {}
 

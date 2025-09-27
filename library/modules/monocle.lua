@@ -4,7 +4,7 @@
 local monocle = {}
 
 --#region Calc
----@class Monocle.Calc
+---@class c__Calc
 monocle.Calc = {}
 
 ---Normalize a Vector2 with the given length or to a unit vector
@@ -19,7 +19,7 @@ function monocle.Calc.SafeNormalize(tself, length) end
 local camera = {}
 
 --#region Circle
----@class Monocle.Circle
+---@class c__Circle
 ---@overload fun(radius: float, x: float, y: float): Circle
 monocle.Circle = {}
 
@@ -37,7 +37,7 @@ local colliderList = {}
 local _component = {}
 
 --#region Coroutine
----@class Monocle.Coroutine
+---@class c__Coroutine
 ---@overload fun(logic: IEnumerator): Coroutine
 monocle.Coroutine = {}
 
@@ -46,7 +46,7 @@ local coroutine = {}
 --#endregion
 
 --#region Ease
----@class Monocle.Ease : { [string]: Ease.Easer }
+---@class c__Ease : { [string]: Ease.Easer }
 monocle.Ease = {}
 
 ---@alias Ease.Easer fun(t: float): float
@@ -57,12 +57,12 @@ monocle.Ease = {}
 function monocle.Ease.Invert(easer) end
 --#endregion
 
----@class Monocle.Engine
+---@class c__Engine
 ---@field Scene Scene
 monocle.Engine = {}
 
 --#region Entity
----@class Monocle.Entity
+---@class c__Entity
 ---@overload fun(): Entity
 monocle.Entity = {}
 
@@ -83,7 +83,7 @@ _entity.add = _entity.Add
 --#endregion
 
 --#region Hitbox
----@class Monocle.Hitbox
+---@class c__Hitbox
 ---@overload fun(width: float, height: float, x: float, y: float): Hitbox
 monocle.Hitbox = {}
 

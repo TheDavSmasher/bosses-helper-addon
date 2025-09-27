@@ -4,7 +4,7 @@
 local components = {}
 
 --#region Stopwatch
----@class Celeste.Mod.BossesHelper.Code.Components.Stopwatch
+---@class c__Stopwatch
 ---@overload fun(time: float): Stopwatch
 components.Stopwatch = {}
 
@@ -18,7 +18,7 @@ function stopwatch:Reset() end
 --#endregion
 
 --#region EntityChecker
----@class Celeste.Mod.BossesHelper.Code.Components.EntityChecker
+---@class c__EntityChecker
 ---@overload fun(checker: (fun(): boolean), onCheck: fun(entity: Entity), state?: boolean, removeOnComplete?: boolean): EntityChecker
 components.EntityChecker = {}
 
@@ -27,7 +27,7 @@ local entityChecker = {}
 --#endregion
 
 --#region EntityTimer
----@class Celeste.Mod.BossesHelper.Code.Components.EntityTimer
+---@class c__EntityTimer
 ---@overload fun(timer: float, onTimer: fun(entity: Entity)): EntityTimer
 components.EntityTimer = {}
 
@@ -36,7 +36,7 @@ local entityTimer = {}
 --#endregion
 
 --#region EntityFlagger
----@class Celeste.Mod.BossesHelper.Code.Components.EntityFlagger
+---@class c__EntityFlagger
 ---@overload fun(flag: string, onFlag: fun(entity: Entity), state?: boolean, reset?: boolean): EntityFlagger
 components.EntityFlagger = {}
 
@@ -45,7 +45,7 @@ local entityFlagger = {}
 --#endregion
 
 --#region EntityChain
----@class Celeste.Mod.BossesHelper.Code.Components.EntityChain
+---@class c__EntityChain
 ---@overload fun(entity: Entity, startChained: boolean, removeTogether?: boolean): EntityChain
 components.EntityChain = {}
 
@@ -54,7 +54,7 @@ local entityChain = {}
 --#endregion
 
 --#region LuaCoroutineComponent
----@class Celeste.Mod.BossesHelper.Code.Components.LuaCoroutineComponent
+---@class c__LuaCoroutineComponent
 ---@overload fun(func: function): LuaCoroutineComponent
 ---@overload fun(coroutine: LuaCoroutine): LuaCoroutineComponent
 components.LuaCoroutineComponent = {}

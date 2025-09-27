@@ -4,7 +4,7 @@
 local helpers = {}
 
 --#region LuaException
----@class Celeste.Mod.BossesHelper.Code.Helpers.LuaException
+---@class c__LuaException
 ---@overload fun(message: string): LuaException
 helpers.LuaException = {}
 
@@ -13,7 +13,7 @@ local luaException = {}
 --#endregion
 
 --#region BossesHelperUtils
----@class Celeste.Mod.BossesHelper.Code.Helpers.BossesHelperUtils
+---@class c__BossesHelperUtils
 helpers.BossesHelperUtils = {}
 
 ---Play an animation on the Sprite and wait for its loop to finish
@@ -31,7 +31,7 @@ function helpers.BossesHelperUtils.PositionTween(tself, target, time, easer) end
 --#endregion
 
 --#region LuaBossHelper
----@class Celeste.Mod.BossesHelper.Code.Helpers.LuaBossHelper
+---@class c__LuaBossHelper
 ---@field HelperFunctions string
 helpers.LuaBossHelper = {}
 

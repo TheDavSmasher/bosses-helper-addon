@@ -4,7 +4,7 @@
 local lua = {}
 
 --#region LuaMethodWrappers
----@class Celeste.Mod.BossesHelper.Code.Helpers.Lua.LuaMethodWrappers
+---@class c__LuaMethodWrappers
 lua.LuaMethodWrappers = {}
 
 --#region Teleport
@@ -121,7 +121,7 @@ function lua.LuaMethodWrappers.EntityHasComponent(entity, name, prefix) end
 --#endregion
 
 --#region LuaFuncCoroutine
----@class Celeste.Mod.BossesHelper.Code.Helpers.Lua.LuaFuncCoroutine
+---@class c__LuaFuncCoroutine
 ---@overload fun(proxy: LuaCoroutineProxy): LuaFuncCoroutine
 lua.LuaFuncCoroutine = {}
 

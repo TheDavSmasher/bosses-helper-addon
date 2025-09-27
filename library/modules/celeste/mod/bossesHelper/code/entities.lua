@@ -14,7 +14,7 @@ function _bossEntity:PlayAnim(anim) end
 --#endregion
 
 --#region AttackEntity
----@class Celeste.Mod.BossesHelper.Code.Entities.AttackEntity
+---@class c__AttackEntity
 ---@overload fun(position: Vector2, hitboxes: Collider, funcOnPlayer: fun(self: Entity, player: Player), startCollidable: boolean, spriteName: string, xScale?: float, yScale?: float) : AttackEntity
 entities.AttackEntity = {}
 
@@ -32,7 +32,7 @@ local _bossActor = {}
 --#endregion
 
 --#region AttackActor
----@class Celeste.Mod.BossesHelper.Code.Entities.AttackActor
+---@class c__AttackActor
 ---@overload fun(position: Vector2, hitboxes: Collider, funcOnPlayer: fun(self: Entity, player: Player), startCollidable: boolean, startSolidCollidable: boolean, spriteName: string, gravMult: float, maxFall: float, xScale?: float, yScale?: float): AttackActor
 entities.AttackActor = {}
 

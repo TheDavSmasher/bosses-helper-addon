@@ -4,7 +4,7 @@
 local bossesHelper = {}
 
 --#region BossesHelperModule
----@class Celeste.Mod.BossesHelper.BossesHelperModule
+---@class c__BossesHelperModule
 ---@field PlayerHealth int
 bossesHelper.BossesHelperModule = {}
 

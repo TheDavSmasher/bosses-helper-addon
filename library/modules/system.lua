@@ -8,7 +8,7 @@ local system = {}
 ---@alias bool boolean
 
 --#region Exception
----@class System.Exception
+---@class c__Exception
 ---@overload fun(message?: string): Exception
 system.Exception = {}
 
