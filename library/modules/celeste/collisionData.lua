@@ -1,0 +1,15 @@
+---@meta Celeste.CollisionData
+
+---@class c__CollisionData
+---@field Empty CollisionData
+local c_CollisionData = {}
+
+---@class CollisionData
+---@field Direction Vector2
+---@field Moved Vector2
+---@field TargetPosition Vector2
+---@field Hit Platform
+---@field Pusher Solid
+local collisionData = {}
+
+return c_CollisionData

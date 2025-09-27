@@ -1,5 +1,7 @@
 ---@meta Celeste
 
+---@diagnostic disable: missing-fields
+
 ---@class Celeste
 local celeste = {}
 
@@ -9,19 +11,8 @@ celeste.Mod = {}
 ---@class Actor : Entity
 local actor = {}
 
---#region Audio
-
----@class c__Audio
----@field CurrentMusic string
+---@module "Celeste.Audio"
 celeste.Audio = {}
-
----Play the given audio event at the given global position.
----@param event string The event name to play.
----@param position? Vector2 Where to play the audio.
----@return EventInstance # The Audio EventInstance
-function celeste.Audio.Play(event, position) end
-
---#endregion
 
 --#region AudioState
 
@@ -49,43 +40,11 @@ function audioTrackState:Layer(layer, value) end
 
 --#endregion
 
---#region BadelineDummy
-
----@class c__BadelineDummy
----@overload fun(pos: Vector2): BadelineDummy
+---@module "Celeste.BadelineDummy"
 celeste.BadelineDummy = {}
 
----@class BadelineDummy : Entity
----@field Sprite Sprite
----@field Floatness float
-local badelineDummy = {}
-
----@param level Level
----@param silent? boolean
-function badelineDummy:Appear(level, silent) end
-
-function badelineDummy:Vanish() end
-
----@param target Vector2
----@param turnAtEndTo? int
----@param faceDir? boolean
----@param fadeLight? boolean
----@param quickEnd? boolean
----@return IEnumerator
-function badelineDummy:FloatTo(target, turnAtEndTo, faceDir, fadeLight, quickEnd) end
-
---#endregion
-
---#region BadelineOldsite
-
----@class c__BadelineOldsite
----@overload fun(position: Vector2, index: int): BadelineOldsite
+---@module "Celeste.BadelineOldsite"
 celeste.BadelineOldsite = {}
-
----@class BadelineOldsite : Entity
-local badelineOldside = {}
-
---#endregion
 
 ---@class BloomRenderer
 ---@field Strength float
@@ -93,54 +52,14 @@ local bloomRenderer = {}
 
 ---@alias Collision fun(data: CollisionData)
 
---#region CollisionData
-
----@class c__CollisionData
----@field Empty CollisionData
+---@module "Celeste.CollisionData"
 celeste.CollisionData = {}
 
----@class CollisionData
----@field Direction Vector2
----@field Moved Vector2
----@field TargetPosition Vector2
----@field Hit Platform
----@field Pusher Solid
-local collisionData = {}
-
---#endregion
-
---#region CutsceneEntity
-
----@class c__CutsceneEntity
+---@module "Celeste.CutsceneEntity"
 celeste.CutsceneEntity = {}
 
----@class CutsceneEntity : Entity
-local _cutsceneEntity = {}
-
----@param target Vector2
----@param duration float
----@param ease? Ease.Easer
----@param delay? float
----@return IEnumerator
-function celeste.CutsceneEntity.CameraTo(target, duration, ease, delay) end
-
----@param level Level
----@param removeSelf? boolean
-function _cutsceneEntity:EndCutscene(level, removeSelf) end
-
---#endregion
-
---#region Dialog
-
----@class c__Dialog
+---@module "Celeste.Dialog"
 celeste.Dialog = {}
-
----Get the Dialog given its name
----@param name string The name of the dialog to get.
----@return string
-function celeste.Dialog.Get(name) end
-
---#endregion
 
 --#region DisplacementRenderer
 
@@ -318,91 +237,11 @@ local miniTextbox = {}
 ---@class Platform : Entity
 local _platform = {}
 
---#region Player
-
----@class c__Player
+---@module "Celeste.Player"
 celeste.Player = {}
 
----@enum IntroTypes
-celeste.Player.IntroTypes = {}
-
----@class Player : Actor
----@field IntroType IntroTypes
----@field Facing Facings
----@field StateMachine StateMachine
----@field ForceCameraUpdate boolean
----@field Dead boolean
----@field DummyFriction boolean
----@field DummyAutoAnimate boolean
----@field AutoJump boolean
----@field AutoJumpTimer float
----@field Speed Vector2
----@field Sprite Sprite
-local player = {}
-
----Make the player Die
----@param dir Vector2
----@param evenIfInvincible? boolean
----@param registerDeathInStats? boolean
----@return userdata deadBody
-function player:Die(dir, evenIfInvincible, registerDeathInStats) end
-
----Check if the Player is touching ground.
----@param at? float Vertical offset to check at.
----@return boolean
-function player:OnGround(at) end
-
----Make the player walk in Dummy state.
----@param x float The target x.
----@param walkBackwards? boolean
----@param speedMultiplier? float
----@param keepWalkingIntoWalls? boolean
----@return IEnumerator
-function player:DummyWalkTo(x, walkBackwards, speedMultiplier, keepWalkingIntoWalls) end
-
----Make the player run in Dummy state.
----@param x float The target x.
----@param fastAnimation? boolean
----@return IEnumerator
-function player:DummyRunTo(x, fastAnimation) end
-
----Make the player jump.
----@param particles? boolean Whether to display dust particles.
----@param playSfx? boolean Whether to play an SFX.
-function player:Jump(particles, playSfx) end
-
----Start the Player's StartFly state
-function player:StartStarFly() end
-
----Start the Player's CassetteFly state.
----@param target Vector2 The target end position.
----@param control Vector2 The flying arc middle point.
-function player:StartCassetteFly(target, control) end
-
-function player:CreateSplitParticles() end
-
---#endregion
-
---#region PlayerInventory
-
----@class c__PlayerInventory
----@field Default PlayerInventory
----@field Prologue PlayerInventory
----@field OldSite PlayerInventory
----@field CH6End PlayerInventory
----@field TheSummit PlayerInventory
----@field Core PlayerInventory
----@field Farewell PlayerInventory
+---@module "Celeste.PlayerInventory"
 celeste.PlayerInventory = {}
-
----@class PlayerInventory
----@field Dashes int
----@field DreamDash bool
----@field Backpack bool
----@field NoRefills bool
-local playerInventory = {}
-
---#endregion
 
 --#region Postcard
 
@@ -423,46 +262,8 @@ function postcard:DisplayRoutine() end
 
 --#endregion
 
---#region Session
-
----@class c__Session
+---@module "Celeste.Session"
 celeste.Session = {}
-
----@enum CoreModes
-celeste.Session.CoreModes = {}
-
----@class Session
----@field Level string
----@field RespawnPoint Vector2
----@field LevelData LevelData
----@field MapData MapData
----@field DeathsInCurrentLevel int
----@field Audio AudioState
----@field HitCheckpoint boolean
----@field Inventory PlayerInventory
----@field Keys HashSet<EntityID>
----@field LevelFlags HashSet<string>
-local session = {}
-
----Update the Level's Starting Dashes
-function session:UpdateLevelStartDashes() end
-
----Get the session flag value
----@param flag string
----@return boolean
-function session:GetFlag(flag) end
-
----Set the session flag value.
----@param flag string
----@param value boolean
-function session:SetFlag(flag, value) end
-
----Get the Level Flag value
----@param flag string
----@return boolean
-function session:GetLevelFlag(flag) end
-
---#endregion
 
 --#region SFX
 

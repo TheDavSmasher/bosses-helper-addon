@@ -7,16 +7,8 @@ local system = {}
 ---@alias int integer
 ---@alias bool boolean
 
---#region Exception
-
----@class c__Exception
----@overload fun(message?: string): Exception
+---@module "System.Exception"
 system.Exception = {}
-
----@class Exception
-local exception = {}
-
---#endregion
 
 --#region Random
 

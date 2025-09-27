@@ -1,18 +1,4 @@
----@meta Microsoft.XNA.Framework
-
----@class Microsoft.XNA.Framework
-local framework = {}
-
----@class Rectangle
----@field Left int
----@field Right int
----@field Top int
----@field Bottom int
----@field X int
----@field Y int
-local rectangle = {}
-
---#region Vector2
+---@meta Microsoft.XNA.Framework.Vector2
 
 ---@class c__Vector2
 ---@field Zero Vector2
@@ -21,7 +7,7 @@ local rectangle = {}
 ---@field UnitY Vector2
 ---@overload fun(x: float, y: float): Vector2
 ---@overload fun(value: float): Vector2
-framework.Vector2 = {}
+local c_Vector2 = {}
 
 ---@class Vector2
 ---@field X float The x component of the vector
@@ -43,6 +29,4 @@ function vector2:Length() end
 ---@return Vector2
 function vector2:Lerp(start, target, amount) end
 
---#endregion
-
-return framework
+return c_Vector2

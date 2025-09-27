@@ -3,18 +3,8 @@
 ---@class Monocle
 local monocle = {}
 
---#region Calc
-
----@class c__Calc
+---@module "Monocle.Calc"
 monocle.Calc = {}
-
----Normalize a Vector2 with the given length or to a unit vector
----@param tself Vector2
----@param length? float The length to give the Vector2. Defaults to 1.
----@return Vector2 # The normalized Vector2
-function monocle.Calc.SafeNormalize(tself, length) end
-
---#endregion
 
 ---@class Camera
 ---@field Position Vector2
@@ -52,47 +42,15 @@ local coroutine = {}
 
 --#endregion
 
---#region Ease
-
----@class c__Ease : { [string]: Ease.Easer }
+---@module "Monocle.Ease"
 monocle.Ease = {}
-
----@alias Ease.Easer fun(t: float): float
-
----Invert an [Ease.Easer](lua://Ease.Easer).
----@param easer Ease.Easer The [Ease.Easer](lua://Ease.Easer) to invert
----@return Ease.Easer inverse The inverted [Ease.Easer](lua://Ease.Easer)
-function monocle.Ease.Invert(easer) end
-
---#endregion
 
 ---@class c__Engine
 ---@field Scene Scene
 monocle.Engine = {}
 
---#region Entity
-
----@class c__Entity
----@overload fun(): Entity
+---@module "Monocle.Entity"
 monocle.Entity = {}
-
----@class Entity
----@field Active bool
----@field Position Vector2
----@field Center Vector2
----@field Collidable boolean
----@field Depth int
-local _entity = {}
-
-function _entity:RemoveSelf() end
-
----Add a Component to the Entity.
----@param component Component The Component to add.
-function _entity:Add(component) end
-
-_entity.add = _entity.Add
-
---#endregion
 
 --#region Hitbox
 
@@ -140,35 +98,7 @@ scene.remove = scene.Remove
 ---@field Locked boolean
 local stateMachine = {}
 
---#region Tween
-
----@class c__Tween
+---@module "Monocle.Tween"
 monocle.Tween = {}
-
----@enum TweenMode
-monocle.Tween.TweenMode = {}
-
----@param entity Entity
----@param targetPosition Vector2
----@param duration float
----@param easer Ease.Easer
----@param tweenMode? TweenMode
----@return Tween
-function monocle.Tween.Position(entity, targetPosition, duration, easer, tweenMode) end
-
----@class Tween : Component
----@field Easer Ease.Easer
----@field TimeLeft float
----@field Duration float
----@field Percent float
----@field Eased float
-local tween = {}
-
-function tween:Stop() end
-
----@return IEnumerator
-function tween:Wait() end
-
---#endregion
 
 return monocle
