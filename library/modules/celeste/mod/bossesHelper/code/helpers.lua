@@ -31,6 +31,7 @@ function helpers.BossesHelperUtils.PlayAnim(tself, anim) end
 ---@param target Vector2 The target position.
 ---@param time float The time to take.
 ---@param easer? Ease.Easer The Easer for the motion.
+---@return Tween
 function helpers.BossesHelperUtils.PositionTween(tself, target, time, easer) end
 
 ---Create a Position Tween on the given actor, calling move each frame.
@@ -42,6 +43,7 @@ function helpers.BossesHelperUtils.PositionTween(tself, target, time, easer) end
 ---@param collisionH? Collision What to do if the Actor collides horizonally.
 ---@param collisionV? Collision What to do if the Actor collides vertically.
 ---@param easer? Ease.Easer The Easer for the motion.
+---@return Tween
 function helpers.BossesHelperUtils.PositionTween(tself, target, time, actNaive, stopOnCollide, collisionH, collisionV, easer) end
 
 ---Create a Position Tween on the given actor, calling move each frame.
@@ -51,6 +53,7 @@ function helpers.BossesHelperUtils.PositionTween(tself, target, time, actNaive, 
 ---@param actNaive? bool Whether to use NaiveMove or standard move operations.
 ---@param stopOnCollide? bool Whether the Tween should stop if a collision happens.
 ---@param easer? Ease.Easer The Easer for the motion.
+---@return Tween
 function helpers.BossesHelperUtils.PositionTween(tself, target, time, actNaive, stopOnCollide, easer) end
 
 --#endregion

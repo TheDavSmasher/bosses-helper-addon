@@ -77,6 +77,7 @@ function bossPuppet:Set1DSpeedDuring(speed, isX, time) end
 ---@param time float The time the transition should take.
 ---@param isX boolean Whether to affect the x component of the speed.
 ---@param easer? Ease.Easer The Easer to transition the speed value.
+---@return Tween # The created Tween
 function bossPuppet:Speed1DTween(start, target, time, isX, easer) end
 
 ---Change the Boss's Hitbox to the one specified.
