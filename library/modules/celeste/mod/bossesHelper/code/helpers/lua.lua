@@ -4,10 +4,12 @@
 local lua = {}
 
 --#region LuaMethodWrappers
+
 ---@class c__LuaMethodWrappers
 lua.LuaMethodWrappers = {}
 
 --#region Teleport
+
 
 ---Sets the player position to the absolute coordinates.
 ---@param scene Scene The scene where the Player is.
@@ -25,9 +27,11 @@ function lua.LuaMethodWrappers.TeleportTo(scene, player, room, intro, nearest) e
 ---@param posX float The X position offset.
 ---@param posY float The Y position offset.
 function lua.LuaMethodWrappers.InstantTeleport(scene, player, room, relative, posX, posY) end
+
 --#endregion
 
 --#region Entities
+
 
 ---Gets all tracked entities by class name.
 ---@param name string Class name of the entity, relative to "Celeste." by default.
@@ -52,9 +56,11 @@ function lua.LuaMethodWrappers.GetAllEntities(name, prefix) end
 ---@param prefix string? Overrides the global class name prefix.
 ---@return any entity First entity of given class.
 function lua.LuaMethodWrappers.GetFirstEntity(name, prefix) end
+
 --#endregion
 
 --#region Components
+
 
 ---Gets all tracked components by class name.
 ---@param name string Class name of the component, relative to "Celeste." by default.
@@ -116,17 +122,21 @@ function lua.LuaMethodWrappers.GetComponentFromEntity(entity, name, prefix) end
 ---@param prefix? string Overrides the global class name prefix.
 ---@return boolean componentFound If the Entity does have a Component of the type specified.
 function lua.LuaMethodWrappers.EntityHasComponent(entity, name, prefix) end
+
 --#endregion
+
 
 --#endregion
 
 --#region LuaFuncCoroutine
+
 ---@class c__LuaFuncCoroutine
 ---@overload fun(proxy: LuaCoroutineProxy): LuaFuncCoroutine
 lua.LuaFuncCoroutine = {}
 
 ---@class LuaFuncCoroutine : LuaCoroutine
 local luaFuncCoroutine = {}
+
 --#endregion
 
 return lua

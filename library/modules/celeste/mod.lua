@@ -8,6 +8,7 @@ local mod = {}
 local everestModuleMetadata = {}
 
 --#region Logger
+
 ---@class c__Logger
 mod.Logger = {}
 
@@ -20,15 +21,18 @@ function mod.Logger.Error(tag, message) end
 ---@param tag string The tag for the message.
 ---@param message string The message
 function mod.Logger.Info(tag, message) end
+
 --#endregion
 
 --#region LuaCoroutine
+
 ---@class c__LuaCoroutine
 ---@overload fun(proxy: LuaCoroutineProxy): LuaCoroutine
 mod.LuaCoroutine = {}
 
 ---@class LuaCoroutine : IEnumerator
 local luaCoroutine = {}
+
 --#endregion
 
 ---@module "Celeste.Mod.BossesHelper"

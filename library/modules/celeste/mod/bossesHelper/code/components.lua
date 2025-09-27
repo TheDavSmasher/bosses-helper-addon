@@ -4,6 +4,7 @@
 local components = {}
 
 --#region Stopwatch
+
 ---@class c__Stopwatch
 ---@overload fun(time: float): Stopwatch
 components.Stopwatch = {}
@@ -15,45 +16,55 @@ local stopwatch = {}
 
 ---Reset the Stopwatch
 function stopwatch:Reset() end
+
 --#endregion
 
 --#region EntityChecker
+
 ---@class c__EntityChecker
 ---@overload fun(checker: (fun(): boolean), onCheck: fun(entity: Entity), state?: boolean, removeOnComplete?: boolean): EntityChecker
 components.EntityChecker = {}
 
 ---@class EntityChecker : Component
 local entityChecker = {}
+
 --#endregion
 
 --#region EntityTimer
+
 ---@class c__EntityTimer
 ---@overload fun(timer: float, onTimer: fun(entity: Entity)): EntityTimer
 components.EntityTimer = {}
 
 ---@class EntityTimer : Component
 local entityTimer = {}
+
 --#endregion
 
 --#region EntityFlagger
+
 ---@class c__EntityFlagger
 ---@overload fun(flag: string, onFlag: fun(entity: Entity), state?: boolean, reset?: boolean): EntityFlagger
 components.EntityFlagger = {}
 
 ---@class EntityFlagger : Component
 local entityFlagger = {}
+
 --#endregion
 
 --#region EntityChain
+
 ---@class c__EntityChain
 ---@overload fun(entity: Entity, startChained: boolean, removeTogether?: boolean): EntityChain
 components.EntityChain = {}
 
 ---@class EntityChain : Component
 local entityChain = {}
+
 --#endregion
 
 --#region LuaCoroutineComponent
+
 ---@class c__LuaCoroutineComponent
 ---@overload fun(func: function): LuaCoroutineComponent
 ---@overload fun(coroutine: LuaCoroutine): LuaCoroutineComponent
@@ -61,6 +72,7 @@ components.LuaCoroutineComponent = {}
 
 ---@class LuaCoroutineComponent : Coroutine
 local luaCoroutineComponent = {}
+
 --#endregion
 
 return components

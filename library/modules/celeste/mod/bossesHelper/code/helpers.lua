@@ -4,15 +4,18 @@
 local helpers = {}
 
 --#region LuaException
+
 ---@class c__LuaException
 ---@overload fun(message: string): LuaException
 helpers.LuaException = {}
 
 ---@class LuaException : Exception
 local luaException = {}
+
 --#endregion
 
 --#region BossesHelperUtils
+
 ---@class c__BossesHelperUtils
 helpers.BossesHelperUtils = {}
 
@@ -28,9 +31,11 @@ function helpers.BossesHelperUtils.PlayAnim(tself, anim) end
 ---@param time float The time to take.
 ---@param easer? Ease.Easer The Easer for the motion.
 function helpers.BossesHelperUtils.PositionTween(tself, target, time, easer) end
+
 --#endregion
 
 --#region LuaBossHelper
+
 ---@class c__LuaBossHelper
 ---@field HelperFunctions string
 helpers.LuaBossHelper = {}
@@ -60,6 +65,7 @@ function helpers.LuaBossHelper.Say(dialog, funcs) end
 ---@param func function The function to call.
 ---@param delay float The amount of time to wait to execute the function.
 function helpers.LuaBossHelper.DoMethodAfterDelay(func, delay) end
+
 --#endregion
 
 ---@module "Celeste.Mod.BossesHelper.Code.Helpers.Lua"

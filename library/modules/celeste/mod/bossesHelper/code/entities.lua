@@ -4,6 +4,7 @@
 local entities = {}
 
 --#region BossEntity
+
 ---@class BossEntity : Actor
 ---@field Sprite Sprite
 local _bossEntity = {}
@@ -11,36 +12,44 @@ local _bossEntity = {}
 ---Play an animation on the attached Sprite.
 ---@param anim string The animation to play
 function _bossEntity:PlayAnim(anim) end
+
 --#endregion
 
 --#region AttackEntity
+
 ---@class c__AttackEntity
 ---@overload fun(position: Vector2, hitboxes: Collider, funcOnPlayer: fun(self: Entity, player: Player), startCollidable: boolean, spriteName: string, xScale?: float, yScale?: float) : AttackEntity
 entities.AttackEntity = {}
 
 ---@class AttackEntity : BossEntity
 local attackEntity = {}
+
 --#endregion
 
 --#region BossActor
+
 ---@class BossActor : BossEntity
 ---@field Speed Vector2
 ---@field GravityMult float
 ---@field SolidCollidable boolean
 ---@field Grounded boolean
 local _bossActor = {}
+
 --#endregion
 
 --#region AttackActor
+
 ---@class c__AttackActor
 ---@overload fun(position: Vector2, hitboxes: Collider, funcOnPlayer: fun(self: Entity, player: Player), startCollidable: boolean, startSolidCollidable: boolean, spriteName: string, gravMult: float, maxFall: float, xScale?: float, yScale?: float): AttackActor
 entities.AttackActor = {}
 
 ---@class AttackActor : BossActor
 local attackActor = {}
+
 --#endregion
 
 --#region BossPuppet
+
 ---@class BossPuppet : BossActor
 ---@field groundFriction float
 ---@field airFriction float
@@ -85,9 +94,11 @@ function bossPuppet:ChangeBounceboxOption(tag) end
 ---Change the Boss's Target to the one specified.
 ---@param tag string The Target group tag to change to.
 function bossPuppet:ChangeTargetOption(tag) end
+
 --#endregion
 
 --#region BossController
+
 ---@class BossController : Entity
 ---@field Health int
 ---@field IsActing boolean *
@@ -151,6 +162,7 @@ function bossController:DeleteStoredObject(key) end
 ---Decrease the Boss's health by the amount.
 ---@param amount int
 function bossController:DecreaseHealth(amount) end
+
 --#endregion
 
 ---@class GlobalSavePoint : Entity
@@ -160,19 +172,23 @@ local globalSavePoint = {}
 local badelineSidekick = {}
 
 --#region Health Displays
+
 ---@class HealthDisplay : Entity
 local healthDisplay = {}
 
 ---@class HealthIconList : HealthDisplay
 local healthIconList = {}
+
 --#endregion
 
 --#region HealthSystemManager
+
 ---@class HealthSystemManager : Entity
 local healthSystemManager = {}
 
 ---@class PlayerHealthBar : HealthIconList
 local playerHealthBar = {}
+
 --#endregion
 
 return entities

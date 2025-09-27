@@ -4,6 +4,7 @@
 local bossesHelper = {}
 
 --#region BossesHelperModule
+
 ---@class c__BossesHelperModule
 ---@field PlayerHealth int
 bossesHelper.BossesHelperModule = {}
@@ -15,6 +16,7 @@ function bossesHelper.BossesHelperModule.GiveIFrames(time) end
 ---Create a new EntityData object with an initialized Values Dictionary.
 ---@return EntityData
 function bossesHelper.BossesHelperModule.MakeEntityData() end
+
 --#endregion
 
 ---@module "Celeste.Mod.BossesHelper.Code"

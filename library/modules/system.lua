@@ -8,30 +8,37 @@ local system = {}
 ---@alias bool boolean
 
 --#region Exception
+
 ---@class c__Exception
 ---@overload fun(message?: string): Exception
 system.Exception = {}
 
 ---@class Exception
 local exception = {}
+
 --#endregion
 
 --#region Random
+
 ---@class Random
 local random = {}
 
 ---Return the next random int
 ---@return int
 function random:Next() end
+
 --#endregion
 
 --#region Collections
+
 ---@class IEnumerator
 local iEnumerator = {}
 
 --#region Generic
 
+
 --#region Dictionary
+
 ---@class Dictionary<K, V>
 local dictionary = {}
 
@@ -41,9 +48,11 @@ local dictionary = {}
 ---@param key K The key of the new value.
 ---@param value V The value to add.
 function dictionary:Add(key, value) end
+
 --#endregion
 
 --#region HashSet
+
 ---@class HashSet<T>
 local hashSet = {}
 
@@ -58,18 +67,24 @@ function hashSet:Add(value) end
 ---@param self HashSet<T>
 ---@param value T
 function hashSet:Remove(value) end
---#endregion
 
 --#endregion
+
+
+--#endregion
+
 
 --#endregion
 
 --#region Type
+
 ---@class Type
 local type = {}
+
 --#endregion
 
 --#region Object
+
 ---@class Object
 local object = {}
 
@@ -77,6 +92,7 @@ local object = {}
 function object:GetType() end
 
 ---@alias csobject Object
+
 --#endregion
 
 return system

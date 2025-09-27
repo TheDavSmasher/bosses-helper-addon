@@ -4,6 +4,7 @@
 local luaCutscenes = {}
 
 --#region ChoicePrompt
+
 ---@class c__ChoicePrompt
 ---@field Choice int
 luaCutscenes.ChoicePrompt = {}
@@ -15,6 +16,7 @@ function luaCutscenes.ChoicePrompt.Prompt(...) end
 
 ---@class ChoicePrompt : Entity
 local choicePrompt = {}
+
 --#endregion
 
 return luaCutscenes

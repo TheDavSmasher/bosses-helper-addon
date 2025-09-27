@@ -13,6 +13,7 @@ local framework = {}
 local rectangle = {}
 
 --#region Vector2
+
 ---@class c__Vector2
 ---@field Zero Vector2
 ---@field One Vector2
@@ -41,6 +42,7 @@ function vector2:Length() end
 ---@param amount float
 ---@return Vector2
 function vector2:Lerp(start, target, amount) end
+
 --#endregion
 
 return framework

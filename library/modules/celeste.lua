@@ -10,6 +10,7 @@ celeste.Mod = {}
 local actor = {}
 
 --#region Audio
+
 ---@class c__Audio
 ---@field CurrentMusic string
 celeste.Audio = {}
@@ -19,9 +20,11 @@ celeste.Audio = {}
 ---@param position? Vector2 Where to play the audio.
 ---@return EventInstance # The Audio EventInstance
 function celeste.Audio.Play(event, position) end
+
 --#endregion
 
 --#region AudioState
+
 ---@class AudioState
 ---@field Music AudioTrackState
 local audioState = {}
@@ -29,9 +32,11 @@ local audioState = {}
 ---Apply the current changes to the Audio State
 ---@param forceSixteenthNoteHack? boolean
 function audioState:Apply(forceSixteenthNoteHack) end
+
 --#endregion
 
 --#region AudioTrackState
+
 ---@class AudioTrackState
 ---@field Event string
 ---@field Progress int
@@ -41,9 +46,11 @@ local audioTrackState = {}
 ---@param layer int The layer to update.
 ---@param value boolean|float The value to give the layer.
 function audioTrackState:Layer(layer, value) end
+
 --#endregion
 
 --#region BadelineDummy
+
 ---@class c__BadelineDummy
 ---@overload fun(pos: Vector2): BadelineDummy
 celeste.BadelineDummy = {}
@@ -66,15 +73,18 @@ function badelineDummy:Vanish() end
 ---@param quickEnd? boolean
 ---@return IEnumerator
 function badelineDummy:FloatTo(target, turnAtEndTo, faceDir, fadeLight, quickEnd) end
+
 --#endregion
 
 --#region BadelineOldsite
+
 ---@class c__BadelineOldsite
 ---@overload fun(position: Vector2, index: int): BadelineOldsite
 celeste.BadelineOldsite = {}
 
 ---@class BadelineOldsite : Entity
 local badelineOldside = {}
+
 --#endregion
 
 ---@class BloomRenderer
@@ -82,6 +92,7 @@ local badelineOldside = {}
 local bloomRenderer = {}
 
 --#region CollisionData
+
 ---@class c__CollisionData
 ---@field Empty CollisionData
 celeste.CollisionData = {}
@@ -93,9 +104,11 @@ celeste.CollisionData = {}
 ---@field Hit Platform
 ---@field Pusher Solid
 local collisionData = {}
+
 --#endregion
 
 --#region CutsceneEntity
+
 ---@class c__CutsceneEntity
 celeste.CutsceneEntity = {}
 
@@ -112,9 +125,11 @@ function celeste.CutsceneEntity.CameraTo(target, duration, ease, delay) end
 ---@param level Level
 ---@param removeSelf? boolean
 function _cutsceneEntity:EndCutscene(level, removeSelf) end
+
 --#endregion
 
 --#region Dialog
+
 ---@class c__Dialog
 celeste.Dialog = {}
 
@@ -122,9 +137,11 @@ celeste.Dialog = {}
 ---@param name string The name of the dialog to get.
 ---@return string
 function celeste.Dialog.Get(name) end
+
 --#endregion
 
 --#region DisplacementRenderer
+
 ---@class DisplacementRenderer
 local displacementRenderer = {}
 
@@ -140,6 +157,7 @@ local burst = {}
 ---@param radiusEaser? Ease.Easer
 ---@return Burst
 function displacementRenderer:AddBurst(position, duration, radiusFrom, radiusTo, alpha, alphaEaser, radiusEaser) end
+
 --#endregion
 
 ---@class EntityData
@@ -152,27 +170,32 @@ function displacementRenderer:AddBurst(position, duration, radiusFrom, radiusTo,
 local entityData = {}
 
 --#region EntityID
+
 ---@class c__EntityID
 ---@overload fun(level: string, id: int): EntityID
 celeste.EntityID = {}
 
 ---@class EntityID
 local entityID = {}
+
 --#endregion
 
 ---@enum Facings
 celeste.Facings = {}
 
 --#region InvisibleBarrier
+
 ---@class c__InvisibleBarrier
 ---@overload fun(pos: Vector2, width: float, height: float): InvisibleBarrier
 celeste.InvisibleBarrier = {}
 
 ---@class InvisibleBarrier : Solid
 local invisibleBarrier = {}
+
 --#endregion
 
 --#region Key
+
 ---@class c__Key
 ---@overload fun(player: Player, id: EntityID): Key
 celeste.Key = {}
@@ -180,9 +203,11 @@ celeste.Key = {}
 ---@class Key : Entity
 ---@field ID EntityID
 local key = {}
+
 --#endregion
 
 --#region Level
+
 ---@class Level : Scene
 ---@field Session Session
 ---@field Bounds Rectangle
@@ -247,6 +272,7 @@ function level:ZoomAcross(screenSpaceFocusPoint, zoom, duration) end
 function level:ZoomBack(duration) end
 
 function level:ResetZoom() end
+
 --#endregion
 
 ---@class LevelData
@@ -254,15 +280,18 @@ function level:ResetZoom() end
 local levelData = {}
 
 --#region LevelLoader
+
 ---@class c__LevelLoader
 ---@overload fun(session: Session, respawn: Vector2): LevelLoader
 celeste.LevelLoader = {}
 
 ---@class LevelLoader : Scene
 local levelLoader = {}
+
 --#endregion
 
 --#region MapData
+
 ---@class MapData
 local mapData = {}
 
@@ -270,21 +299,25 @@ local mapData = {}
 ---@param at Vector2 Offset to get the data from.
 ---@return LevelData
 function mapData:GetAt(at) end
+
 --#endregion
 
 --#region MiniTextbox
+
 ---@class c__MiniTextbox
 ---@overload fun(dialogId: string): MiniTextbox
 celeste.MiniTextbox = {}
 
 ---@class MiniTextbox : Entity
 local miniTextbox = {}
+
 --#endregion
 
 ---@class Platform : Entity
 local _platform = {}
 
 --#region Player
+
 ---@class c__Player
 celeste.Player = {}
 
@@ -345,9 +378,11 @@ function player:StartStarFly() end
 function player:StartCassetteFly(target, control) end
 
 function player:CreateSplitParticles() end
+
 --#endregion
 
 --#region PlayerInventory
+
 ---@class c__PlayerInventory
 ---@field Default PlayerInventory
 ---@field Prologue PlayerInventory
@@ -364,9 +399,11 @@ celeste.PlayerInventory = {}
 ---@field Backpack bool
 ---@field NoRefills bool
 local playerInventory = {}
+
 --#endregion
 
 --#region Postcard
+
 ---@class c__Postcard
 ---@overload fun(msg: string, sfxIn: string, sfxOut: string): Postcard
 ---@overload fun(msg: string, area: int): Postcard
@@ -381,9 +418,11 @@ function postcard:BeforeRender() end
 ---The Routine to display the Postcart.
 ---@return IEnumerator
 function postcard:DisplayRoutine() end
+
 --#endregion
 
 --#region Session
+
 ---@class c__Session
 celeste.Session = {}
 
@@ -420,9 +459,11 @@ function session:SetFlag(flag, value) end
 ---@param flag string
 ---@return boolean
 function session:GetLevelFlag(flag) end
+
 --#endregion
 
 --#region SFX
+
 ---@class c__SFX
 celeste.SFX = {}
 
@@ -430,12 +471,14 @@ celeste.SFX = {}
 ---@param handle string
 ---@return string # The event name, or handle if not found.
 function celeste.SFX.EventnameByHandle(handle) end
+
 --#endregion
 
 ---@class Solid : Platform
 local solid = {}
 
 --#region SoundSource
+
 ---@class c__SoundSource
 ---@overload fun(): SoundSource
 celeste.SoundSource = {}
@@ -447,9 +490,11 @@ local soundSource = {}
 ---@param event string The event to play.
 ---@return SoundSource self
 function soundSource:Play(event) end
+
 --#endregion
 
 --#region Textbox
+
 ---@class c__Textbox
 celeste.Textbox = {}
 
@@ -457,15 +502,18 @@ celeste.Textbox = {}
 ---@param dialog string The dialog or dialogId to show
 ---@return IEnumerator # The display routine
 function celeste.Textbox.Say(dialog) end
+
 --#endregion
 
 --#region WindController
+
 ---@class c__WindController
 ---@overload fun(patterns: userdata): WindController
 celeste.WindController = {}
 
 ---@class WindController: Entity
 local windController = {}
+
 --#endregion
 
 return celeste
