@@ -38,6 +38,7 @@ local collider = {}
 local colliderList = {}
 
 ---@class Component
+---@field Active bool
 local _component = {}
 
 --#region Coroutine
@@ -76,6 +77,7 @@ monocle.Engine = {}
 monocle.Entity = {}
 
 ---@class Entity
+---@field Active bool
 ---@field Position Vector2
 ---@field Center Vector2
 ---@field Collidable boolean
@@ -137,5 +139,36 @@ scene.remove = scene.Remove
 ---@field State int
 ---@field Locked boolean
 local stateMachine = {}
+
+--#region Tween
+
+---@class c__Tween
+monocle.Tween = {}
+
+---@enum TweenMode
+monocle.Tween.TweenMode = {}
+
+---@param entity Entity
+---@param targetPosition Vector2
+---@param duration float
+---@param easer Ease.Easer
+---@param tweenMode? TweenMode
+---@return Tween
+function monocle.Tween.Position(entity, targetPosition, duration, easer, tweenMode) end
+
+---@class Tween : Component
+---@field Easer Ease.Easer
+---@field TimeLeft float
+---@field Duration float
+---@field Percent float
+---@field Eased float
+local tween = {}
+
+function tween:Stop() end
+
+---@return IEnumerator
+function tween:Wait() end
+
+--#endregion
 
 return monocle
