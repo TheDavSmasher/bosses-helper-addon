@@ -14,11 +14,6 @@ function LuaBossHelper.GetFileContent(file) end
 ---@return ColliderList
 function LuaBossHelper.GetColliderListFromLuaTable(table) end
 
----Add the given function as a Coroutine on the Entity passed.
----@param entity Entity The Entity to add the Coroutine to.
----@param func function The function to execute in the Coroutine.
-function LuaBossHelper.AddConstantBackgroundCoroutine(entity, func) end
-
 ---Pass the functions to be used as triggers while saying the given dialog ID in a Textbox.
 ---@param dialog string The dialog ID to use for the Textbox.
 ---@param funcs function[] The functions to use as triggers.
