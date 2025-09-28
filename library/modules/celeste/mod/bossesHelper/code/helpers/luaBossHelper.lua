@@ -10,9 +10,9 @@ local LuaBossHelper = {}
 function LuaBossHelper.GetFileContent(file) end
 
 ---Create a ColliderList from the given Colliders.
----@param ... Collider
+---@param table Collider[]
 ---@return ColliderList
-function LuaBossHelper.GetColliderListFromLuaTable(...) end
+function LuaBossHelper.GetColliderListFromLuaTable(table) end
 
 ---Add the given function as a Coroutine on the Entity passed.
 ---@param entity Entity The Entity to add the Coroutine to.
