@@ -58,7 +58,7 @@ monocle.Entity = {}
 ---@overload fun(width: float, height: float, x: float, y: float): Hitbox
 monocle.Hitbox = {}
 
----@class Hitbox
+---@class Hitbox : Collider
 local hitbox = {}
 
 --#endregion
