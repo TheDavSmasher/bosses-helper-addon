@@ -3,9 +3,6 @@
 ---@class _G
 ---@field luanet table Luanet server
 
----@class InjectedData : table
----@field modMetaData EverestModuleMetadata
-
 ---@class LuaCoroutineProxy
 ---@field resume ProxyResume
 ---@field value thread
