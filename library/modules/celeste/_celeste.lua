@@ -18,6 +18,10 @@ local actor = {}
 ---@param data CollisionData
 function actor:OnSquish(data) end
 
+---@param downCheck? int
+---@return bool
+function actor:OnGround(downCheck) end
+
 --#endregion
 
 ---@module "Celeste.Audio"
@@ -142,6 +146,9 @@ celeste.InvisibleBarrier = {}
 local invisibleBarrier = {}
 
 --#endregion
+
+---@module "Celeste.Input"
+celeste.Input = {}
 
 --#region Key
 
@@ -322,6 +329,9 @@ local soundSource = {}
 ---@param event string The event to play.
 ---@return SoundSource self
 function soundSource:Play(event) end
+
+---Stop the SoundSource current event.
+function soundSource:Stop() end
 
 --#endregion
 

@@ -6,9 +6,11 @@ local c_Entity = {}
 
 ---@class Entity
 ---@field Active bool
+---@field Visible bool
 ---@field Position Vector2
 ---@field Center Vector2
 ---@field Collidable boolean
+---@field Collider Collider
 ---@field Depth int
 local _entity = {}
 
@@ -19,5 +21,6 @@ function _entity:RemoveSelf() end
 function _entity:Add(component) end
 
 _entity.add = _entity.Add
+_entity.position = _entity.Position
 
 return c_Entity

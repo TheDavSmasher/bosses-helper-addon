@@ -29,7 +29,7 @@ function session:GetFlag(flag) end
 
 ---Set the session flag value.
 ---@param flag string
----@param value boolean
+---@param value? boolean
 function session:SetFlag(flag, value) end
 
 ---Get the Level Flag value

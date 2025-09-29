@@ -53,11 +53,13 @@ local attackActor = {}
 --#region BossPuppet
 
 ---@class BossPuppet : BossActor
+---@field Facing int
 ---@field groundFriction float
 ---@field airFriction float
 ---@field killOnContact boolean
 ---@field BossHitCooldown float
 ---@field BossDamageCooldown Stopwatch
+---@field Hurtbox Collider
 local bossPuppet = {}
 
 ---Maintain a component of the Boss's speed to the value during the time given. 
@@ -163,7 +165,7 @@ function bossController:GetStoredObject(key) end
 function bossController:DeleteStoredObject(key) end
 
 ---Decrease the Boss's health by the amount.
----@param amount int
+---@param amount? int
 function bossController:DecreaseHealth(amount) end
 
 --#endregion

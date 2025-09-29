@@ -61,4 +61,11 @@ function player:StartCassetteFly(target, control) end
 
 function player:CreateSplitParticles() end
 
+---Play a sound from the Player.
+---@param sound string The event to play.
+---@param param? string
+---@param value? float
+---@return EventInstance
+function player:Play(sound, param, value) end
+
 return c_Player

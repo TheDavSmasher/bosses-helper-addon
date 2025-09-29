@@ -189,6 +189,7 @@ function helpers.getRoomPosition(name) end
 ---@param y float Target y coordinate.
 ---@param room string? What room the game should attempt to load. If room is specified player will land at closest spawnpoint to target location.
 ---@param introType string|IntroTypes intro type to use, can be either a #IntroTypes enum or a string
+---@overload fun(x: float, y: float, room?: string, introType?: string|IntroTypes)
 ---@overload fun(pos: Vector2, room?: string, introType?: string|IntroTypes)
 function helpers.teleportTo(x, y, room, introType) end
 
@@ -330,7 +331,7 @@ function helpers.getRoomCoordinatesOffset(x, y) end
 
 --- Set session flag.
 ---@param flag string Flag to set.
----@param value boolean State of flag.
+---@param value? boolean State of flag.
 function helpers.setFlag(flag, value) end
 
 --- Get session flag.
@@ -754,7 +755,7 @@ function helpers.getEntityChain(entity, startChained, remove) end
 ---Create and return a basic entity to use in attacks.
 ---@param position Vector2 The position the entity will be at.
 ---@param hitboxes Collider The collider the entity will use.
----@param spriteName string The sprite the entity will use.
+---@param spriteName? string The sprite the entity will use.
 ---@param startCollidable? boolean If the entity should spawn with collisions active. Defaults to true.
 ---@default true
 ---@param funcOnPlayer? fun(self, player) The function that will be called when the entity "self" collides with the Player. Defaults to killing the Player.
@@ -769,7 +770,7 @@ function helpers.getNewBasicAttackEntity(position, hitboxes, spriteName, startCo
 ---Create and return a basic entity to use in attacks.
 ---@param position Vector2 The position the entity will be at.
 ---@param hitboxes Collider The collider the entity will use.
----@param spriteName string The sprite the entity will use.
+---@param spriteName? string The sprite the entity will use.
 ---@param gravMult? float The multiplier to the Gravity constant the Actor should use. Defaults to 1.
 ---@default 1
 ---@param maxFall? float The fastest the Boss will fall naturally due to gravity. Defaults to 90.

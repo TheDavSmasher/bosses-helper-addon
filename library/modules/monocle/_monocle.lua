@@ -27,9 +27,16 @@ local collider = {}
 ---@class ColliderList : Collider
 local colliderList = {}
 
+--#region Component
+
 ---@class Component
 ---@field Active bool
+---@field Visible bool
 local _component = {}
+
+function _component:RemoveSelf() end
+
+--#endregion
 
 --#region Coroutine
 
@@ -47,6 +54,7 @@ monocle.Ease = {}
 
 ---@class c__Engine
 ---@field Scene Scene
+---@field DeltaTime float
 monocle.Engine = {}
 
 ---@module "Monocle.Entity"
@@ -100,5 +108,15 @@ local stateMachine = {}
 
 ---@module "Monocle.Tween"
 monocle.Tween = {}
+
+--#region VirtualButton
+
+---@class VirtualButton
+---@field Check boolean
+---@field Pressed boolean
+---@field Released boolean
+local virtualButton = {}
+
+--#endregion
 
 return monocle
