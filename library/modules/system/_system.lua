@@ -44,6 +44,8 @@ local dictionary = {}
 ---@param value V The value to add.
 function dictionary:Add(key, value) end
 
+dictionary.add = dictionary.Add
+
 --#endregion
 
 --#region HashSet

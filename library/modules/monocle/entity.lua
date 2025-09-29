@@ -2,6 +2,7 @@
 
 ---@class c__Entity
 ---@overload fun(): Entity
+---@overload fun(position: Vector2): Entity
 local c_Entity = {}
 
 ---@class Entity

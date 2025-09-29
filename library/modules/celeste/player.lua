@@ -4,7 +4,18 @@
 local c_Player = {}
 
 ---@enum IntroTypes
-c_Player.IntroTypes = {}
+c_Player.IntroTypes = {
+  Transition = {0},
+  Respawn = {1},
+  WalkInRight = {2},
+  WalkInLeft = {3},
+  Jump = {4},
+  WakeUp = {5},
+  Fall = {6},
+  TempleMirrorVoid = {7},
+  None = {8},
+  ThinkForABit = {9}
+}
 
 ---@class Player : Actor
 ---@field IntroType IntroTypes

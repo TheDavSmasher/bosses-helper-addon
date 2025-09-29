@@ -4,7 +4,11 @@
 local c_Session = {}
 
 ---@enum CoreModes
-c_Session.CoreModes = {}
+c_Session.CoreModes = {
+  None = {0},
+  Hot = {1},
+  Cold = {2}
+}
 
 ---@class Session
 ---@field Level string

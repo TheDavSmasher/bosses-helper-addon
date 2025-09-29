@@ -4,7 +4,13 @@
 local c_Tween = {}
 
 ---@enum TweenMode
-c_Tween.TweenMode = {}
+c_Tween.TweenMode = {
+  Persist = {0},
+  Oneshot = {1},
+  Looping = {2},
+  YoyoOneshot = {3},
+  YoyoLooping = {4}
+}
 
 ---@param entity Entity
 ---@param targetPosition Vector2
