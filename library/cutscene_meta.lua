@@ -19,7 +19,3 @@
 ---@alias LuaGetData
 ---| fun(filename: string, data: InjectedData, preparer: LuaPreparer): (table, ...)
 ---| fun(filename: string, data: InjectedData, preparer: LuaPreparer): nil
-
----@alias LuaDataGetter
----| fun(filename: string, data: InjectedData): (table, ...)
----| fun(filename: string, data: InjectedData): nil
