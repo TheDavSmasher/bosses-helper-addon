@@ -63,6 +63,17 @@ celeste.BadelineOldsite = {}
 ---@field Strength float
 local bloomRenderer = {}
 
+--#region Bumper
+
+---@class c__Bumper
+---@overload fun(position: Vector2, node?: Vector2): Bumper
+---@overload fun(data: EntityData, offset: Vector2): Bumper
+celeste.Bumper = {}
+
+---@class Bumper : Entity
+
+--#endregion
+
 --#region Collision
 
 ---@class Collision : Delegate
@@ -119,6 +130,12 @@ function displacementRenderer:AddBurst(position, duration, radiusFrom, radiusTo,
 
 --#endregion
 
+--#region EntityData
+
+---@class c__EntityData
+---@overload fun(): EntityData
+celeste.EntityData = {}
+
 ---@class EntityData
 ---@field ID int
 ---@field Level Level
@@ -127,6 +144,8 @@ function displacementRenderer:AddBurst(position, duration, radiusFrom, radiusTo,
 ---@field Height int
 ---@field Values Dictionary<string, any>
 local entityData = {}
+
+--#endregion
 
 --#region EntityID
 

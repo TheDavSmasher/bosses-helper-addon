@@ -50,7 +50,7 @@ function helpers.readCelesteAsset(filename) end
 function helpers.loadCelesteAsset(filename) end
 
 --- Put debug message in the Celeste console.
----@param message string The debug message.
+---@param message any The debug message.
 ---@param tag string? The tag in the console.
 ---@default "Bosses Helper"
 function helpers.log(message, tag) end
