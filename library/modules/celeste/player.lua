@@ -25,11 +25,46 @@ c_Player.IntroTypes = {
 ---@field Dead boolean
 ---@field DummyFriction boolean
 ---@field DummyAutoAnimate boolean
+---@field Dashes int
+---@field DashDir Vector2
+---@field DashAttacking bool
 ---@field AutoJump boolean
 ---@field AutoJumpTimer float
 ---@field Speed Vector2
 ---@field Sprite Sprite
 local player = {}
+
+--#region Player States
+
+---@class Player
+---@field StNormal 0
+---@field StClimb 1
+---@field StDash 2
+---@field StSwim 3
+---@field StBoost 4
+---@field StRedDash 5
+---@field StHitSquash 6
+---@field StLaunch 7
+---@field StPickup 8
+---@field StDreamDash 9
+---@field StSummitLaunch 10
+---@field StDummy 11
+---@field StIntroWalk 12
+---@field StIntroJump 13
+---@field StIntroRespawn 14
+---@field StIntroWakeUp 15
+---@field StBirdDashTutorial 16
+---@field StFrozen 17
+---@field StReflectionFall 18
+---@field StStarFly 19
+---@field StTempleFall 20
+---@field StCassetteFly 21
+---@field StAttract 22
+---@field StIntroMoonJump 23
+---@field StFlingBird 24
+---@field StIntroThinkForABit 25
+
+--#endregion
 
 ---Make the player Die
 ---@param dir Vector2
@@ -78,5 +113,7 @@ function player:CreateSplitParticles() end
 ---@param value? float
 ---@return EventInstance
 function player:Play(sound, param, value) end
+
+function player:RefillStamina() end
 
 return c_Player

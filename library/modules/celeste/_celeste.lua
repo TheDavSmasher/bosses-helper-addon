@@ -139,6 +139,17 @@ local entityID = {}
 
 --#endregion
 
+--#region ExitBlock
+
+---@class c__ExitBlock
+---@overload fun(data: EntityData, offset: Vector2): ExitBlock
+celeste.ExitBlock = {}
+
+---@class ExitBlock : Solid
+local exitBlock = {}
+
+--#endregion
+
 ---@enum Facings
 celeste.Facings = {
   Right = {1},
@@ -168,6 +179,16 @@ celeste.Key = {}
 ---@class Key : Entity
 ---@field ID EntityID
 local key = {}
+
+--#endregion
+
+--#region LedgeBlocker
+
+---@class c__LedgeBlocker
+---@overload fun(): LedgeBlocker
+celeste.LedgeBlocker = {}
+
+---@class LedgeBlocker : Component
 
 --#endregion
 

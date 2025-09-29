@@ -13,7 +13,7 @@ local camera = {}
 --#region Circle
 
 ---@class c__Circle
----@overload fun(radius: float, x: float, y: float): Circle
+---@overload fun(radius: float, x?: float, y?: float): Circle
 monocle.Circle = {}
 
 ---@class Circle : Collider
@@ -63,7 +63,7 @@ monocle.Entity = {}
 --#region Hitbox
 
 ---@class c__Hitbox
----@overload fun(width: float, height: float, x: float, y: float): Hitbox
+---@overload fun(width: float, height: float, x?: float, y?: float): Hitbox
 monocle.Hitbox = {}
 
 ---@class Hitbox : Collider
