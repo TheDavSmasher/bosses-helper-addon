@@ -3,21 +3,6 @@
 ---@class c__BossesHelperUtils
 local BossesHelperUtils = {}
 
----Return the LuaFunction as a Collision delegate.
----@param func L_Collision
----@return Collision
-function BossesHelperUtils.ToCollision(func) end
-
----Return the LuaFunction as an Ease.Easer delegate.
----@param func L_Ease.Easer
----@return Ease.Easer
-function BossesHelperUtils.ToEaser(func) end
-
----Return the LuaFunction as a DashCollision delegate.
----@param func L_DashCollision
----@return DashCollision
-function BossesHelperUtils.ToDashCollision(func) end
-
 ---Play an animation on the Sprite and wait for its loop to finish
 ---@param tself Sprite
 ---@param anim string
