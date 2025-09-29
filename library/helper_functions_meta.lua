@@ -712,7 +712,7 @@ function helpers.addComponentToBoss(component) end
 function helpers.addConstantBackgroundCoroutine(func, ...) end
 
 ---Returns an EntityChecker Component that will execute the second passed function when the first function's return value matches the state required.
----@param checker fun() The function that will be called every frame to test its value.
+---@param checker fun(): bool The function that will be called every frame to test its value.
 ---@param func? fun(entity: Entity) The function that will execute once the timer ends. Takes an entity parameter, which will be the Entity the component is added to. Defaults to the DestroyEntity function.
 ---@default helpers.destroyEntity
 ---@param state? boolean The state the checker function's return value must match. Defaults to true.
