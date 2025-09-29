@@ -5,17 +5,6 @@
 ---@class Celeste.Mod.BossesHelper.Code.Helpers
 local helpers = {}
 
---#region LuaException
-
----@class c__LuaException
----@overload fun(message: string): LuaException
-helpers.LuaException = {}
-
----@class LuaException : Exception
-local luaException = {}
-
---#endregion
-
 ---@module "Celeste.Mod.BossesHelper.Code.Helpers.BossesHelperUtils"
 helpers.BossesHelperUtils = {}
 

@@ -9,6 +9,17 @@ lua.LuaMethodWrappers = {}
 ---@module "Celeste.Mod.BossesHelper.Code.Helpers.Lua.LuaDelegates"
 lua.LuaDelegates = {}
 
+--#region LuaException
+
+---@class c__LuaException
+---@overload fun(message: string): LuaException
+lua.LuaException = {}
+
+---@class LuaException : Exception
+local luaException = {}
+
+--#endregion
+
 --#region LuaProxyCoroutine
 
 ---@class c__LuaProxyCoroutine
