@@ -132,13 +132,13 @@ function helpers.walk(x, walkBackwards, speedMultiplier, keepWalkingIntoWalls) e
 
 --- Player runs to the given X coordinate. This is in pixels and uses map based coordinates.
 ---@param x float X coordinate to run to.
----@param fastAnimation boolean Whether this should use the fast animation or not.
+---@param fastAnimation? boolean Whether this should use the fast animation or not.
 ---@return IEnumerator
 function helpers.runTo(x, fastAnimation) end
 
 --- Player runs x pixels from current position.
 ---@param x float X offset for where player should run.
----@param fastAnimation boolean Whether this should use the fast animation or not.
+---@param fastAnimation? boolean Whether this should use the fast animation or not.
 ---@return IEnumerator
 function helpers.run(x, fastAnimation) end
 
