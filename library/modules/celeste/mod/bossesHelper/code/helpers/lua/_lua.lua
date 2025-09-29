@@ -6,14 +6,14 @@ local lua = {}
 ---@module "Celeste.Mod.BossesHelper.Code.Helpers.Lua.LuaMethodWrappers"
 lua.LuaMethodWrappers = {}
 
---#region LuaFuncCoroutine
+--#region LuaProxyCoroutine
 
----@class c__LuaFuncCoroutine
----@overload fun(proxy: LuaCoroutineProxy): LuaFuncCoroutine
-lua.LuaFuncCoroutine = {}
+---@class c__LuaProxyCoroutine
+---@overload fun(proxy: LuaCoroutineProxy): LuaProxyCoroutine
+lua.LuaProxyCoroutine = {}
 
----@class LuaFuncCoroutine : LuaCoroutine
-local luaFuncCoroutine = {}
+---@class LuaProxyCoroutine : LuaCoroutine
+local LuaProxyCoroutine = {}
 
 --#endregion
 
