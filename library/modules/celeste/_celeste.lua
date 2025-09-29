@@ -8,8 +8,17 @@ local celeste = {}
 ---@module "Celeste.Mod"
 celeste.Mod = {}
 
+--#region Actor
+
 ---@class Actor : Entity
+---@field TreatNaive bool
+---@field SquishCallback Collision
 local actor = {}
+
+---@param data CollisionData
+function actor:OnSquish(data) end
+
+--#endregion
 
 ---@module "Celeste.Audio"
 celeste.Audio = {}

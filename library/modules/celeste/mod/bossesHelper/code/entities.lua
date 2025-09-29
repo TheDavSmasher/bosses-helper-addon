@@ -33,6 +33,8 @@ local attackEntity = {}
 ---@field GravityMult float
 ---@field SolidCollidable boolean
 ---@field Grounded boolean
+---@field OnCollideH Collision
+---@field OnCollideV Collision
 local _bossActor = {}
 
 --#endregion
