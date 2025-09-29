@@ -6,6 +6,9 @@ local lua = {}
 ---@module "Celeste.Mod.BossesHelper.Code.Helpers.Lua.LuaMethodWrappers"
 lua.LuaMethodWrappers = {}
 
+---@module "Celeste.Mod.BossesHelper.Code.Helpers.Lua.LuaDelegates"
+lua.LuaDelegates = {}
+
 --#region LuaProxyCoroutine
 
 ---@class c__LuaProxyCoroutine

@@ -3,7 +3,14 @@
 ---@class c__Ease : { [string]: Ease.Easer }
 local c_Ease = {}
 
----@alias Ease.Easer fun(t: float): float
+--#region Ease.Easer
+
+---@class Ease.Easer : Delegate
+---@field Invoke fun(self: Ease.Easer, t: float): float
+
+---@alias L_Ease.Easer fun(t: float): float
+
+--#endregion
 
 ---Invert an [Ease.Easer](lua://Ease.Easer).
 ---@param easer Ease.Easer The [Ease.Easer](lua://Ease.Easer) to invert
