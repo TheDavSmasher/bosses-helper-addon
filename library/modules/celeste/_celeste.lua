@@ -59,7 +59,14 @@ celeste.BadelineOldsite = {}
 ---@field Strength float
 local bloomRenderer = {}
 
----@alias Collision fun(data: CollisionData)
+--#region Collision
+
+---@class Collision : Delegate
+---@field Invoke fun(self: Collision, data: CollisionData)
+
+---@alias L_Collision fun(data: CollisionData)
+
+--#endregion
 
 ---@module "Celeste.CollisionData"
 celeste.CollisionData = {}
@@ -67,7 +74,14 @@ celeste.CollisionData = {}
 ---@module "Celeste.CutsceneEntity"
 celeste.CutsceneEntity = {}
 
----@alias DashCollision fun(player: Player, direction: Vector2): DashCollisionResult
+--#region DashCollision
+
+---@class DashCollision : Delegate
+---@field Invoke fun(self: DashCollision, player: Player, direction: Vector2): DashCollisionResult
+
+---@alias L_DashCollision fun(player: Player, direction: Vector2): DashCollisionResult
+
+--#endregion
 
 ---@enum DashCollisionResult
 celeste.DashCollisionResult = {}

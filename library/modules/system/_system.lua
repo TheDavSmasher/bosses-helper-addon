@@ -10,6 +10,9 @@ local system = {}
 ---@module "System.Exception"
 system.Exception = {}
 
+---@class Delegate
+local delegate = {}
+
 --#region Random
 
 ---@class Random
