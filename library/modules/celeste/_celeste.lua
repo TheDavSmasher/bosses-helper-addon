@@ -58,6 +58,11 @@ celeste.CollisionData = {}
 ---@module "Celeste.CutsceneEntity"
 celeste.CutsceneEntity = {}
 
+---@alias DashCollision fun(player: Player, direction: Vector2): DashCollisionResult
+
+---@enum DashCollisionResult
+celeste.DashCollisionResult = {}
+
 ---@module "Celeste.Dialog"
 celeste.Dialog = {}
 
@@ -235,6 +240,7 @@ local miniTextbox = {}
 --#endregion
 
 ---@class Platform : Entity
+---@field OnDashCollide DashCollision
 local _platform = {}
 
 ---@module "Celeste.Player"
