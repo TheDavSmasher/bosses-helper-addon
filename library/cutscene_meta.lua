@@ -3,12 +3,8 @@
 ---@class _G
 ---@field luanet table Luanet server
 
----@class LuaCoroutineProxy
+---@class LuaProxy
 ---@field resume ProxyResume
 ---@field value thread
 
----@alias ProxyResume fun(self: LuaCoroutineProxy, ...: any): boolean, string|LuaException|nil
-
----@alias LuaPreparer
----| fun(env: table, func: function): false
----| fun(env: table, func: function): function, ...
+---@alias ProxyResume fun(self: LuaProxy, ...: any): boolean, string|LuaException|nil

@@ -27,7 +27,7 @@ function mod.Logger.Info(tag, message) end
 --#region LuaCoroutine
 
 ---@class c__LuaCoroutine
----@overload fun(proxy: LuaCoroutineProxy): LuaCoroutine
+---@overload fun(proxy: LuaProxy): LuaCoroutine
 mod.LuaCoroutine = {}
 
 ---@class LuaCoroutine : IEnumerator

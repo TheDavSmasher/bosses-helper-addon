@@ -1,6 +1,6 @@
 ---@meta Celeste.Mod.LuaCutscenes.LuaHelper
 
----@class Celeste.Mod.LuaCutscenes.LuaHelper
+---@class c__LuaHelper
 local luaHelper = {}
 
 return luaHelper
