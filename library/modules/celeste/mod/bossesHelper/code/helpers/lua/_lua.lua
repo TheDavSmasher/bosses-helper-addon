@@ -1,5 +1,7 @@
 ---@meta Celeste.Mod.BossesHelper.Code.Helpers.Lua
 
+---@diagnostic disable: missing-fields
+
 ---@class Celeste.Mod.BossesHelper.Code.Helpers.Lua
 local lua = {}
 
@@ -8,6 +10,9 @@ lua.LuaMethodWrappers = {}
 
 ---@module "Celeste.Mod.BossesHelper.Code.Helpers.Lua.LuaDelegates"
 lua.LuaDelegates = {}
+
+---@module "Celeste.Mod.BossesHelper.Code.Helpers.Lua.LuaBossHelper"
+lua.LuaBossHelper = {}
 
 --#region LuaException
 

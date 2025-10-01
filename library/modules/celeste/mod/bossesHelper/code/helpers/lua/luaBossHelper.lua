@@ -1,4 +1,4 @@
----@meta Celeste.Mod.BossesHelper.Code.Helpers.LuaBossHelper
+---@meta Celeste.Mod.BossesHelper.Code.Helpers.Lua.LuaBossHelper
 
 ---@class c__LuaBossHelper
 ---@field HelperFunctions string
