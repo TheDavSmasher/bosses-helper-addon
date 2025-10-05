@@ -1,7 +1,7 @@
 ---@meta CutsceneHelper
 
 ---@class _G
----@field luanet table Luanet server
+---@field luanet LuaNet
 
 ---@class LuaProxy
 ---@field resume ProxyResume
