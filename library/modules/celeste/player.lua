@@ -36,7 +36,7 @@ local player = {}
 
 --#region Player States
 
----@class Player
+---@class c__Player
 ---@field StNormal 0
 ---@field StClimb 1
 ---@field StDash 2
