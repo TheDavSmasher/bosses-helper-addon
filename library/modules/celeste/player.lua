@@ -3,7 +3,11 @@
 ---@class c__Player
 local c_Player = {}
 
----@enum IntroTypes
+--#region IntroTypes
+
+---@class IntroTypes : Enum
+
+---@type CSEnum<IntroTypes>
 c_Player.IntroTypes = {
   Transition = {0},
   Respawn = {1},
@@ -16,6 +20,8 @@ c_Player.IntroTypes = {
   None = {8},
   ThinkForABit = {9}
 }
+
+--#endregion
 
 ---@class Player : Actor
 ---@field IntroType IntroTypes

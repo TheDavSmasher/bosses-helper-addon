@@ -73,6 +73,37 @@ function hashSet:Remove(value) end
 
 --#endregion
 
+--#region Enum
+
+---@class c__Enum
+system.Enum = {}
+
+---@generic T : Enum
+---@param enum T
+---@return string name
+function system.Enum.GetName(enum) end
+
+---@generic T : Enum
+---@param enum T
+---@return bool
+function system.Enum.IsDefined(enum) end
+
+---@param type Type
+---@param name string
+---@return Enum
+function system.Enum.Parse(type, name) end
+
+---@class CSEnum<T> : { [string]: T }
+
+---@class Enum
+local _enum = {}
+
+---@param enum Enum
+---@return bool
+function _enum:HasFlag(enum) end
+
+--#endregion
+
 --#region Type
 
 ---@class Type

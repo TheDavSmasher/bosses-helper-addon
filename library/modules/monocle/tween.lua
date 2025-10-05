@@ -3,7 +3,11 @@
 ---@class c__Tween
 local c_Tween = {}
 
----@enum TweenMode
+--#region TweenMode
+
+---@class TweenMode : Enum
+
+---@type CSEnum<TweenMode>
 c_Tween.TweenMode = {
   Persist = {0},
   Oneshot = {1},
@@ -11,6 +15,8 @@ c_Tween.TweenMode = {
   YoyoOneshot = {3},
   YoyoLooping = {4}
 }
+
+--#endregion
 
 ---@param entity Entity
 ---@param targetPosition Vector2

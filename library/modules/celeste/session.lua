@@ -3,12 +3,18 @@
 ---@class c__Session
 local c_Session = {}
 
----@enum CoreModes
+--#region CoreModes
+
+---@class CoreModes : Enum
+
+---@type CSEnum<CoreModes>
 c_Session.CoreModes = {
   None = {0},
   Hot = {1},
   Cold = {2}
 }
+
+--#endregion
 
 ---@class Session
 ---@field Level string

@@ -98,7 +98,11 @@ celeste.CutsceneEntity = {}
 
 --#endregion
 
----@enum DashCollisionResult
+--#region DashCollisionResult
+
+---@class DashCollisionResult : Enum
+
+---@type CSEnum<DashCollisionResult>
 celeste.DashCollisionResult = {
   Rebound = {0},
 	NormalCollision = {1},
@@ -106,6 +110,8 @@ celeste.DashCollisionResult = {
 	Bounce = {3},
 	Ignore = {4}
 }
+
+--#endregion
 
 ---@module "Celeste.Dialog"
 celeste.Dialog = {}
@@ -169,11 +175,17 @@ local exitBlock = {}
 
 --#endregion
 
----@enum Facings
+--#region Facings
+
+---@class Facings : Enum
+
+---@type CSEnum<Facings>
 celeste.Facings = {
   Right = {1},
 	Left = {-1}
 }
+
+--#endregion
 
 --#region InvisibleBarrier
 
