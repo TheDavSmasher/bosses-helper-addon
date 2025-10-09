@@ -35,6 +35,19 @@ local luaCoroutine = {}
 
 --#endregion
 
+--#region FakeAssembly
+
+---@class Celeste.Mod.Helpers
+mod.Helpers = {}
+
+---@class c__FakeAssembly
+mod.Helpers.FakeAssembly = {}
+
+---@return Assembly
+function mod.Helpers.FakeAssembly.GetFakeEntryAssembly() end
+
+--#endregion
+
 ---@module "Celeste.Mod.BossesHelper"
 mod.BossesHelper = {}
 

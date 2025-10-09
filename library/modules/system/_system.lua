@@ -21,6 +21,37 @@ system.Reflection = {}
 ---@class Delegate : Object
 local delegate = {}
 
+--#region Array
+
+---@class c__Array
+system.Array = {}
+
+---@param type Type
+---@param length integer
+---@return Array
+function system.Array.CreateInstance(type, length) end
+
+---@class Array<T> : Object, { [integer]: T|nil }
+---@field Length int
+local array = {}
+
+--#endregion
+
+--#region Convert
+
+---@class c__Convert
+system.Convert = {}
+
+---@param value any
+---@return int
+function system.Convert.ToInt32(value) end
+
+---@param value any
+---@return float
+function system.Convert.ToSingle(value) end
+
+--#endregion
+
 --#region Random
 
 ---@class Random : Object
@@ -114,13 +145,29 @@ function _enum:HasFlag(enum) end
 
 --#region Type
 
----@class Type : Object
+---@class c__Type
+system.Type = {}
+
+---@param name string
+---@return Type
+function system.Type.GetType(name) end
+
+---@class Type : MemberInfo
 local type = {}
 
 ---@param name string
 ---@param flags? BindingFlags
----@return FieldInfo|nil
+---@return FieldInfo?
 function type:GetField(name, flags) end
+
+---@param name string
+---@param flags? BindingFlags
+---@return MethodInfo?
+function type:GetMethod(name, flags) end
+
+---@param flags? BindingFlags
+---@return MethodInfo[]
+function type:GetMethods(flags) end
 
 --#endregion
 
