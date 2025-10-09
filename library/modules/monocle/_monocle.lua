@@ -6,7 +6,7 @@ local monocle = {}
 ---@module "Monocle.Calc"
 monocle.Calc = {}
 
----@class Camera
+---@class Camera : Object
 ---@field Position Vector2
 local camera = {}
 
@@ -29,7 +29,7 @@ local colliderList = {}
 
 --#region Component
 
----@class Component
+---@class Component : Object
 ---@field Active bool
 ---@field Visible bool
 local _component = {}
@@ -73,7 +73,7 @@ local hitbox = {}
 
 --#region Sprite
 
----@class Sprite
+---@class Sprite : Component
 ---@field Scale Vector2
 local sprite = {}
 
@@ -85,7 +85,7 @@ function sprite:Play(anim) end
 
 --#region Scene
 
----@class Scene
+---@class Scene : Object
 local scene = {}
 
 ---Add an [Entity](lua://Entity) onto the [Scene](lua://Scene).
@@ -101,7 +101,7 @@ scene.remove = scene.Remove
 
 --#endregion
 
----@class StateMachine
+---@class StateMachine : Object
 ---@field State int
 ---@field Locked boolean
 local stateMachine = {}
@@ -111,7 +111,7 @@ monocle.Tween = {}
 
 --#region VirtualButton
 
----@class VirtualButton
+---@class VirtualButton : Object
 ---@field Check boolean
 ---@field Pressed boolean
 ---@field Released boolean

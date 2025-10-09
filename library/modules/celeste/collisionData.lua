@@ -4,7 +4,7 @@
 ---@field Empty CollisionData
 local c_CollisionData = {}
 
----@class CollisionData
+---@class CollisionData : Struct
 ---@field Direction Vector2
 ---@field Moved Vector2
 ---@field TargetPosition Vector2

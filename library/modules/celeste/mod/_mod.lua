@@ -3,7 +3,7 @@
 ---@class Celeste.Mod : { [string]: table }
 local mod = {}
 
----@class EverestModuleMetadata
+---@class EverestModuleMetadata : Object
 ---@field Name string
 local everestModuleMetadata = {}
 

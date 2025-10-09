@@ -10,7 +10,7 @@
 ---@field Farewell PlayerInventory
 local c_PlayerInventory = {}
 
----@class PlayerInventory
+---@class PlayerInventory : Struct
 ---@field Dashes int
 ---@field DreamDash bool
 ---@field Backpack bool

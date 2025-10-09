@@ -2,7 +2,7 @@
 
 local studio = {}
 
----@class EventInstance
+---@class EventInstance : Object
 local eventInstance = {}
 
 return studio

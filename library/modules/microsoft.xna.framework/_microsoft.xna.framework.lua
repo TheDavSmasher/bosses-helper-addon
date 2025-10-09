@@ -5,7 +5,7 @@
 ---@class Microsoft.XNA.Framework
 local framework = {}
 
----@class Rectangle
+---@class Rectangle : Struct
 ---@field Left int
 ---@field Right int
 ---@field Top int

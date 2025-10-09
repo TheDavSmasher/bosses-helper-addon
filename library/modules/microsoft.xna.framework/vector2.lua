@@ -7,9 +7,10 @@
 ---@field UnitY Vector2
 ---@overload fun(x: float, y: float): Vector2
 ---@overload fun(value: float): Vector2
+---@overload fun(): Vector2
 local c_Vector2 = {}
 
----@class Vector2
+---@class Vector2 : Struct
 ---@field X float The x component of the vector
 ---@field Y float The y component of the vector
 ---@operator unm : Vector2

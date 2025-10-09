@@ -29,7 +29,7 @@ celeste.Audio = {}
 
 --#region AudioState
 
----@class AudioState
+---@class AudioState : Object
 ---@field Music AudioTrackState
 local audioState = {}
 
@@ -41,7 +41,7 @@ function audioState:Apply(forceSixteenthNoteHack) end
 
 --#region AudioTrackState
 
----@class AudioTrackState
+---@class AudioTrackState : Object
 ---@field Event string
 ---@field Progress int
 local audioTrackState = {}
@@ -59,7 +59,7 @@ celeste.BadelineDummy = {}
 ---@module "Celeste.BadelineOldsite"
 celeste.BadelineOldsite = {}
 
----@class BloomRenderer
+---@class BloomRenderer : Object
 ---@field Strength float
 local bloomRenderer = {}
 
@@ -118,10 +118,10 @@ celeste.Dialog = {}
 
 --#region DisplacementRenderer
 
----@class DisplacementRenderer
+---@class DisplacementRenderer : Object
 local displacementRenderer = {}
 
----@class Burst
+---@class Burst : Object
 local burst = {}
 
 ---@param position Vector2
@@ -142,7 +142,7 @@ function displacementRenderer:AddBurst(position, duration, radiusFrom, radiusTo,
 ---@overload fun(): EntityData
 celeste.EntityData = {}
 
----@class EntityData
+---@class EntityData : Object
 ---@field ID int
 ---@field Level Level
 ---@field Position Vector2
@@ -159,7 +159,7 @@ local entityData = {}
 ---@overload fun(level: string, id: int): EntityID
 celeste.EntityID = {}
 
----@class EntityID
+---@class EntityID : Struct
 local entityID = {}
 
 --#endregion
@@ -292,7 +292,7 @@ function level:ResetZoom() end
 
 --#endregion
 
----@class LevelData
+---@class LevelData : Object
 ---@field Bounds Rectangle
 local levelData = {}
 
@@ -309,7 +309,7 @@ local levelLoader = {}
 
 --#region MapData
 
----@class MapData
+---@class MapData : Object
 local mapData = {}
 
 ---Get the LevelData at the Offset.

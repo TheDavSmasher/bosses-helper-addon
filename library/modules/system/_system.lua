@@ -7,15 +7,20 @@ local system = {}
 ---@alias int integer
 ---@alias bool boolean
 
+---@class Struct : Object
+---@overload fun() : Struct
+
+---@class Interface : Object
+
 ---@module "System.Exception"
 system.Exception = {}
 
----@class Delegate
+---@class Delegate : Object
 local delegate = {}
 
 --#region Random
 
----@class Random
+---@class Random : Object
 local random = {}
 
 ---Return the next random int
@@ -26,7 +31,7 @@ function random:Next() end
 
 --#region Collections
 
----@class IEnumerator
+---@class IEnumerator : Interface
 local iEnumerator = {}
 
 --#region Generic
@@ -34,7 +39,7 @@ local iEnumerator = {}
 
 --#region Dictionary
 
----@class Dictionary<K, V>
+---@class Dictionary<K, V> : Object
 local dictionary = {}
 
 ---Add an element to the Dictionary with the given key.
@@ -50,7 +55,7 @@ dictionary.add = dictionary.Add
 
 --#region HashSet
 
----@class HashSet<T>
+---@class HashSet<T> : Object
 local hashSet = {}
 
 ---Add a value to the HashSet.
@@ -95,7 +100,7 @@ function system.Enum.Parse(type, name) end
 
 ---@class CSEnum<T> : { [string]: T }
 
----@class Enum
+---@class Enum : Struct
 local _enum = {}
 
 ---@param enum Enum
@@ -106,7 +111,7 @@ function _enum:HasFlag(enum) end
 
 --#region Type
 
----@class Type
+---@class Type : Object
 local type = {}
 
 --#endregion

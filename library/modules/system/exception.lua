@@ -4,7 +4,7 @@
 ---@overload fun(message?: string): Exception
 local c_Exception = {}
 
----@class Exception
+---@class Exception : Object
 local exception = {}
 
 return c_Exception

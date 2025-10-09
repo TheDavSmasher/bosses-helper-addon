@@ -5,7 +5,7 @@
 ---@overload fun(position: Vector2): Entity
 local c_Entity = {}
 
----@class Entity
+---@class Entity : Object
 ---@field Active bool
 ---@field Visible bool
 ---@field Position Vector2

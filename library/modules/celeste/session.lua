@@ -16,7 +16,7 @@ c_Session.CoreModes = {
 
 --#endregion
 
----@class Session
+---@class Session : Object
 ---@field Level string
 ---@field RespawnPoint Vector2
 ---@field LevelData LevelData
