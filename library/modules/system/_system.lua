@@ -15,6 +15,9 @@ local system = {}
 ---@module "System.Exception"
 system.Exception = {}
 
+---@module "System.Reflection"
+system.Reflection = {}
+
 ---@class Delegate : Object
 local delegate = {}
 
@@ -113,6 +116,11 @@ function _enum:HasFlag(enum) end
 
 ---@class Type : Object
 local type = {}
+
+---@param name string
+---@param flags? BindingFlags
+---@return FieldInfo|nil
+function type:GetField(name, flags) end
 
 --#endregion
 
