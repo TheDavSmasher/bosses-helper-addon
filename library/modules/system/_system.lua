@@ -153,6 +153,7 @@ system.Type = {}
 function system.Type.GetType(name) end
 
 ---@class Type : MemberInfo
+---@field Assembly Assembly
 local type = {}
 
 ---@param name string
