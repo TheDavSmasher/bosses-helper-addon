@@ -18,6 +18,10 @@ system.Exception = {}
 ---@module "System.Reflection"
 system.Reflection = {}
 
+---@class Action : Delegate
+
+---@class Func<T> : Delegate
+
 ---@class Delegate : Object
 local delegate = {}
 
