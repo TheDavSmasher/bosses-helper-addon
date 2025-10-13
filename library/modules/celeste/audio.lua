@@ -10,4 +10,8 @@ local audio = {}
 ---@return EventInstance # The Audio EventInstance
 function audio.Play(event, position) end
 
+---@param instance EventInstance
+---@param allowFadeOut? bool
+function audio.Stop(instance, allowFadeOut) end
+
 return audio
