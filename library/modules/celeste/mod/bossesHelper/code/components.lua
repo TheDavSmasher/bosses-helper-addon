@@ -63,16 +63,4 @@ local entityChain = {}
 
 --#endregion
 
---#region LuaCoroutineComponent
-
----@class c__LuaCoroutineComponent
----@overload fun(func: function): LuaCoroutineComponent
----@overload fun(coroutine: LuaCoroutine): LuaCoroutineComponent
-components.LuaCoroutineComponent = {}
-
----@class LuaCoroutineComponent : Coroutine
-local luaCoroutineComponent = {}
-
---#endregion
-
 return components
