@@ -28,7 +28,7 @@ local luaException = {}
 --#region LuaProxyCoroutine
 
 ---@class c__LuaProxyCoroutine
----@overload fun(proxy: LuaProxy): LuaProxyCoroutine
+---@overload fun(func: function): LuaProxyCoroutine
 lua.LuaProxyCoroutine = {}
 
 ---@class LuaProxyCoroutine : LuaCoroutine
