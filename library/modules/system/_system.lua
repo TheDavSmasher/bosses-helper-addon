@@ -8,7 +8,6 @@ local system = {}
 ---@alias bool boolean
 
 ---@class Struct : Object
----@overload fun() : Struct
 
 ---@class Interface : Object
 

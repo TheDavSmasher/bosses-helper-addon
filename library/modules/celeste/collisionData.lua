@@ -2,6 +2,7 @@
 
 ---@class c__CollisionData
 ---@field Empty CollisionData
+---@overload fun(): CollisionData
 local c_CollisionData = {}
 
 ---@class CollisionData : Struct
