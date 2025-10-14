@@ -78,6 +78,8 @@ celeste.Bumper = {}
 
 ---@class Collision : Delegate
 ---@field Invoke fun(self: Collision, data: CollisionData)
+---@operator add(Collision): Collision
+---@operator sub(Collision): Collision
 
 ---@alias L_Collision fun(data: CollisionData)
 
@@ -93,6 +95,8 @@ celeste.CutsceneEntity = {}
 
 ---@class DashCollision : Delegate
 ---@field Invoke fun(self: DashCollision, player: Player, direction: Vector2): DashCollisionResult
+---@operator add(DashCollision): DashCollision
+---@operator sub(DashCollision): DashCollision
 
 ---@alias L_DashCollision fun(player: Player, direction: Vector2): DashCollisionResult
 

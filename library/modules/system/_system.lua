@@ -19,8 +19,12 @@ system.Exception = {}
 system.Reflection = {}
 
 ---@class Action : Delegate
+---@operator add(Action): Action
+---@operator sub(Action): Action
 
 ---@class Func<T> : Delegate
+---@operator add(Func): Func
+---@operator sub(Func): Func
 
 ---@class Delegate : Object
 local delegate = {}

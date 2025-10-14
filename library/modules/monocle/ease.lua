@@ -7,6 +7,8 @@ local c_Ease = {}
 
 ---@class Ease.Easer : Delegate
 ---@field Invoke fun(self: Ease.Easer, t: float): float
+---@operator add(Ease.Easer): Ease.Easer
+---@operator sub(Ease.Easer): Ease.Easer
 
 ---@alias L_Ease.Easer fun(t: float): float
 
