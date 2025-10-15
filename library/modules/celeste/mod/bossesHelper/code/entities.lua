@@ -60,6 +60,7 @@ local attackActor = {}
 ---@field BossHitCooldown float
 ---@field BossDamageCooldown Stopwatch
 ---@field Hurtbox Collider
+---@field KillCollider Collider
 local bossPuppet = {}
 
 ---Maintain a component of the Boss's speed to the value during the time given. 
@@ -85,19 +86,23 @@ function bossPuppet:Set1DSpeedDuring(speed, isX, time) end
 function bossPuppet:Speed1DTween(start, target, time, isX, easer) end
 
 ---Change the Boss's Hitbox to the one specified.
----@param tag string The Hitbox group tag to change to.
+---@param tag? string The Hitbox group tag to change to.
 function bossPuppet:ChangeHitboxOption(tag) end
 
 ---Change the Boss's Hurtbox to the one specified.
----@param tag string The Hurtbox group tag to change to.
+---@param tag? string The Hurtbox group tag to change to.
 function bossPuppet:ChangeHurtboxOption(tag) end
 
+---Change the Boss's KillCollider to the one specified.
+---@param tag? string The KillCollider group tag to change to.
+function bossPuppet:ChangeKillColliderOption(tag) end
+
 ---Change the Boss's Bouncebox to the one specified.
----@param tag string The Bouncebox group tag to change to.
+---@param tag? string The Bouncebox group tag to change to.
 function bossPuppet:ChangeBounceboxOption(tag) end
 
 ---Change the Boss's Target to the one specified.
----@param tag string The Target group tag to change to.
+---@param tag? string The Target group tag to change to.
 function bossPuppet:ChangeTargetOption(tag) end
 
 --#endregion
