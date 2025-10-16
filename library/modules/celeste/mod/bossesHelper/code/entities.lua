@@ -56,7 +56,7 @@ local attackActor = {}
 ---@field Facing int
 ---@field groundFriction float
 ---@field airFriction float
----@field killOnContact boolean
+---@field KillOnContact boolean
 ---@field BossHitCooldown float
 ---@field BossDamageCooldown Stopwatch
 ---@field Hurtbox Collider
