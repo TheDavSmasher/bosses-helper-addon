@@ -26,19 +26,6 @@ local attackEntity = {}
 
 --#endregion
 
---#region BossActor
-
----@class BossActor : BossEntity
----@field Speed Vector2
----@field GravityMult float
----@field SolidCollidable boolean
----@field Grounded boolean
----@field OnCollideH Collision
----@field OnCollideV Collision
-local _bossActor = {}
-
---#endregion
-
 --#region AttackActor
 
 ---@class c__AttackActor
