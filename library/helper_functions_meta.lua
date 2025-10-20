@@ -680,6 +680,10 @@ function helpers.changeBaseHitboxTo(tag) end
 ---@param tag string The hurtbox group tag to use.
 function helpers.changeHurtboxTo(tag) end
 
+---Change the Boss' hurtboxes to those stored under the given tag.
+---@param tag string The hurtbox group tag to use.
+function helpers.changeKillColliderTo(tag) end
+
 ---Change the Boss' bouncebox to that stored under the given tag.
 ---@param tag string The bouncebox tag to use.
 function helpers.changeBounceboxTo(tag) end
