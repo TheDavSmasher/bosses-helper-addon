@@ -49,6 +49,13 @@ function helpers.readCelesteAsset(filename) end
 ---@return table|nil result Tahble of loaded asset or nil
 function helpers.loadCelesteAsset(filename) end
 
+
+---Load the file given by the path as a Lua table.
+---@param path string The file path within the mod.
+---@param assetMod? string The name of the mod to get the asset from. Defaults to BossesHelper
+---@return table # The table loaded from the file given, if successful.
+function helpers.getLuaAsset(path, assetMod) end
+
 --- Put debug message in the Celeste console.
 ---@param message any The debug message.
 ---@param tag string? The tag in the console.
@@ -571,12 +578,14 @@ function helpers.keepSpeedDuring(time) end
 ---Create a new Position Tween, which will slowly move the Boss to the target.
 ---@param target Vector2 The vector2 target position the Boss will move towards.
 ---@param time float The time the Boss will take to reach the target.
+---@param treatNaive? bool Whether to ignore collisions when moving.
+---@param stopOnCollide? bool Whether to stop the Tween on a collision.
 ---@param easer? string|Ease.Easer The easer to apply to the motion. If a string is provided, it will call helpers.getEaserByName. Defaults to nil.
 ---@default nil
 ---@param invert? boolean If the easer should be inverted. Defaults to false.
 ---@default false
 ---@return float time The time given from the Tween
-function helpers.positionTween(target, time, easer, invert) end
+function helpers.positionTween(target, time, treatNaive, stopOnCollide, easer, invert) end
 
 ---Create a new Tween for the Boss' x speed.
 ---@param start float The initial value of the Tween, which the Boss' speed x component will set to at the start.
